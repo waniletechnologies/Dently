@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { auth } from '../../../../public/images';
+import { TestimonialCarousel } from "./testimonial-carousel";
 
 interface AuthLayoutProps {
   children: React.ReactNode
@@ -16,6 +17,7 @@ export function AuthLayout({ children }: AuthLayoutProps) {
           <div className="hidden lg:flex items-start justify-center w-1/2 mt-4">
             <div className="relative w-[90%] max-h-screen h-full border border-gray-200 rounded-2xl overflow-hidden shadow-lg">
               <Image src={auth} alt="Auth background" fill className="object-cover" priority />
+              <TestimonialCarousel />
             </div>
           </div>
         </div>
