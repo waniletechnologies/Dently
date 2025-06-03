@@ -1,6 +1,5 @@
 "use client"
 
-import { Header } from "@/components/Header"
 import { CallDetail } from "../components/call-details"
 
 interface CallDetailPageProps {
@@ -11,11 +10,8 @@ interface CallDetailPageProps {
 
 export default function CallDetailPage({ params }: CallDetailPageProps) {
   return (
-      <div className="flex-1 flex flex-col">
-        <Header />
-        <main className="flex-1 p-6">
+        <main className="sm:p-6 p-3">
           <CallDetail callId={params.id} />
         </main>
-      </div>
   )
 }

@@ -1,6 +1,5 @@
 "use client"
 
-import { ChevronDown } from "lucide-react"
 import { MetricsCards, OverallRatingChart, TopPerformers, SocialMediaAnalytics, TodaysTasks, CampaignPerformance } from "./components"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 

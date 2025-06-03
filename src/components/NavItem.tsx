@@ -34,27 +34,27 @@ export function NavItem({ title, icon: Icon, path, active, hasSubmenu, submenuIt
   }
 
   return (
-    <div>
+    <div className="min-w-0">
       <Button
         variant="ghost"
         onClick={handleClick}
-        className={`w-full justify-start cursor-pointer ${
+        className={`w-full justify-start cursor-pointer truncate ${
           isActive
             ? "bg-primary text-white hover:bg-primary/70 hover:text-white"
             : "text-[#848484] hover:text-[#171717] hover:bg-gray-50"
         }`}
       >
-        <Icon className="mr-3 h-4 w-4" />
-        {title}
+        <Icon className="mr-3 h-4 w-4 shrink-0" />
+        <span className="truncate">{title}</span>
         {hasSubmenu && (
           <ChevronRight 
-            className={`ml-auto h-4 w-4 transition-transform ${isSubmenuOpen ? 'rotate-90' : ''}`} 
+            className={`ml-auto h-4 w-4 shrink-0 transition-transform ${isSubmenuOpen ? 'rotate-90' : ''}`} 
           />
         )}
       </Button>
       
       {hasSubmenu && isSubmenuOpen && (
-        <div className="ml-4 mt-1 space-y-1">
+        <div className="pl-4 mt-1 space-y-1 overflow-hidden">
           {submenuItems?.map((item, index) => (
             <Button
               key={index}
@@ -63,13 +63,13 @@ export function NavItem({ title, icon: Icon, path, active, hasSubmenu, submenuIt
                 router.push(item.path)
                 close() // Close sidebar on mobile when navigating
               }}
-              className={`w-full justify-start pl-7 ${
+              className={`w-full justify-start pl-7 truncate ${
                 pathname === item.path
                   ? "bg-primary text-white hover:bg-primary/70 hover:text-white"
                   : "text-[#848484] hover:text-[#171717] hover:bg-gray-50"
               }`}
             >
-              {item.title}
+              <span className="truncate">{item.title}</span>
             </Button>
           ))}
         </div>
