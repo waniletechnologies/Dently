@@ -1,7 +1,5 @@
 "use client"
 
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/Header"
 import { CallFilters } from "./components/call-filters"
 import { CallMetrics } from "./components/call-metrics"
 import { CallTable } from "./components/call-table"

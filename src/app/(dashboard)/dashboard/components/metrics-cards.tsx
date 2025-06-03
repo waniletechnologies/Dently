@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { dashboardData } from "@/lib/db"
 import Image from "next/image"
-import { revenue, appointments, show, call } from "../../../../public/images"
+import { revenue, appointments, show, call } from "../../../../../public/images"
 const iconMap = {
   chart: revenue,
   calendar: appointments,

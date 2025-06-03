@@ -10,4 +10,5 @@ import revenue from './revenue.svg'
 import appointments from './appointments.svg'
 import show from './show.svg'
 import call from './call.svg'
-export {auth, logo, profile, revenue, appointments, show, call, connect, meta, kejabi}
+import callIcon from './callIcon.svg'
+export {auth, logo, profile, revenue, appointments, show, call, connect, meta, kejabi, callIcon}
