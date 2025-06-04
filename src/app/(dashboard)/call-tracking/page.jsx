@@ -7,7 +7,7 @@ import { CallPagination } from "./components/call-pagination"
 
 export default function CallTrackingPage() {
   return (
-        <main className="flex-1 p-6">
+        <main className="sm:p-6 p-3 bg-[#f9f8fa] ">
           <CallFilters />
           <CallMetrics />
           <CallTable />

@@ -11,7 +11,10 @@ import { LuClock12 } from "react-icons/lu";
 import { IoMdClose } from "react-icons/io";
 import { callIcon } from "../../../../../public/images"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
+
 export function CallTable() {
+  const router = useRouter()
   const getStatusBadge = (status: string, type: "booking" | "followup") => {
     const baseClasses = "text-xs font-medium"
 
@@ -71,7 +74,7 @@ export function CallTable() {
                 <TableCell>
                   <div className="flex items-center gap-1">
                       <Image src={callIcon} alt="call"  className='cursor-pointer'/>
-                    <Button variant="ghost" size="sm" className="h-8 w-8 p-0 text-[#595858] hover:text-[#171717]">
+                    <Button onClick={() => router.push(`/call-tracking/${call.id}`)} variant="ghost" size="sm" className="h-8 w-8 p-0 cursor-pointer text-[#595858] hover:text-[#171717]">
                       <Edit className="h-4 w-4" />
                     </Button>
                   </div>

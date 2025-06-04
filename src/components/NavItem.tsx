@@ -63,7 +63,7 @@ export function NavItem({ title, icon: Icon, path, active, hasSubmenu, submenuIt
                 router.push(item.path)
                 close() // Close sidebar on mobile when navigating
               }}
-              className={`w-full justify-start pl-7 truncate ${
+              className={`w-full justify-start pl-7 cursor-pointer truncate ${
                 pathname === item.path
                   ? "bg-primary text-white hover:bg-primary/70 hover:text-white"
                   : "text-[#848484] hover:text-[#171717] hover:bg-gray-50"
