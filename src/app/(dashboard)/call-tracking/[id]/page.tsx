@@ -10,7 +10,7 @@ interface CallDetailPageProps {
 
 export default function CallDetailPage({ params }: CallDetailPageProps) {
   return (
-        <main className="sm:p-6 p-3">
+        <main className="sm:p-6 p-3 bg-[#f9f8fa] ">
           <CallDetail callId={params.id} />
         </main>
   )

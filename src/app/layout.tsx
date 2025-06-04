@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={workSans.variable}>
       <title>Dental Doctor</title>
-      <body className={workSans.className}>
+      <body  className={`${workSans.className} `}>
         {children}
       </body>
     </html>

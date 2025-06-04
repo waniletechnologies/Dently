@@ -17,7 +17,7 @@ export default function PatientsPage() {
 
   const handleViewPatient = (patientId) => {
     // Navigate to patient details page
-    window.location.href = `/client-management/patients/${patientId}`
+    window.location.href = `/client-managment/patients/${patientId}`
   }
 
   const handleEditPatient = (patientId) => {
@@ -45,7 +45,7 @@ export default function PatientsPage() {
   }
 
   return (
-        <main className="sm:p-6 p-3">
+        <main className="sm:p-6 p-3 bg-[#f9f8fa] ">
           <h1 className="text-2xl font-semibold text-[#171717] mb-6">Patients</h1>
 
           <PatientsFilter onAddPatient={handleAddPatient} onFilterChange={handleFilterChange} />

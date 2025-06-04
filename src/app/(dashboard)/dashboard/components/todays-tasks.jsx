@@ -44,34 +44,35 @@ export function TodaysTasks() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="today" className="w-full">
-          <TabsList className="w-full flex flex-wrap gap-2 mb-6">
+        <div className="overflow-x-auto pb-2">
+        <TabsList className="w-full flex gap-2 bg-white border border-[#e1e1e1] rounded-lg  min-w-max">
             <TabsTrigger
               value="today"
-              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-white data-[state=active]:text-[#171717]"
+              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
             >
-              Today&apos;s Tasks
+              Today's Tasks
             </TabsTrigger>
             <TabsTrigger
               value="upcoming"
-              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-white data-[state=active]:text-[#171717]"
+              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
             >
               Upcoming
             </TabsTrigger>
             <TabsTrigger
               value="overdue"
-              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-white data-[state=active]:text-[#171717]"
+              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
             >
               Overdue
             </TabsTrigger>
             <TabsTrigger
               value="recommendations"
-              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-white data-[state=active]:text-[#171717]"
+              className="flex-1 min-w-[150px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
             >
-              Pam&apos;s recommendations
+              Pam's recommendations
             </TabsTrigger>
           </TabsList>
-
-          <div>
+        </div>
+          <div className="overflow-x-hidden">
             <TabsContent value="today" className="mt-0">
               {renderTaskList(dashboardData.todaysTasks)}
             </TabsContent>

@@ -37,7 +37,7 @@ export default function LeadsPage() {
   }
 
   return (
-        <main className=" p-3 sm:p-6">
+        <main className=" p-3 bg-[#f9f8fa]  sm:p-6">
           <h1 className="text-2xl font-semibold text-[#171717] mb-6">Leads</h1>
 
           <LeadsFilter onAddLead={handleAddLead} onFilterChange={handleFilterChange} />
