@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "../../../../../../public/images";
 import Image from "next/image";
-import { HiCheckCircle, HiExclamationCircle } from "react-icons/hi";
+import { HiCheckCircle } from "react-icons/hi";
 
 export function StepDentally({ onNext }: { onNext: () => void }) {
   const [status, setStatus] = useState<"idle" | "connecting" | "success">("idle");
@@ -43,13 +43,13 @@ export function StepDentally({ onNext }: { onNext: () => void }) {
 
         {status === "success" && (
           <div className="bg-[#FAF6DC] text-yellow-800 rounded-md px-6 py-3 text-center mb-6 text-sm font-medium">
-            Pam will never edit patients' data without your permission.
+            Pam will never edit patients&apos; data without your permission.
           </div>
         )}
 
         {status === "idle" && (
           <div className="bg-[#FAF6DC] text-[#C29709] rounded-md px-6 py-3 text-center mb-6 text-sm font-medium">
-            Pam will never edit patients' data without your permission.
+            Pam will never edit patients&apos; data without your permission.
           </div>
         )}
 

@@ -10,18 +10,15 @@ import { ArrowLeft, TrendingUp, Calendar, User, MessageSquare, Phone, Edit } fro
 import { callTrackingData } from "@/lib/db"
 import Link from "next/link"
 
-interface CallDetailProps {
-  callId: string
-}
 
-export function CallDetail({ callId }: CallDetailProps) {
-  const callDetail = callTrackingData.callDetails[callId as keyof typeof callTrackingData.callDetails]
+export function CallDetail({ callId }) {
+  const callDetail = callTrackingData.callDetails[callId]
 
   if (!callDetail) {
     return <div>Call not found</div>
   }
 
-  const getStatusBadge = (status: string, type: "booking" | "followup") => {
+  const getStatusBadge = (status) => {
     const baseClasses = "text-xs font-medium"
 
     if (type === "booking") {

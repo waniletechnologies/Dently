@@ -1,22 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import type React from "react"
-
 import { forwardRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import { UseFormRegister } from "react-hook-form"
 import { FieldValues } from "react-hook-form"
-import { FiEye, FiEyeOff,  FiLock, FiMail, FiUser } from "react-icons/fi"
+import { FiEye, FiEyeOff, FiLock, FiMail, FiUser } from "react-icons/fi"
 
-export interface InputWithIconProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputWithIconProps<TFormValues extends FieldValues> extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: "mail" | "user" | "lock"
-  register?: UseFormRegister<FieldValues>
-  name?: string
+  register?: UseFormRegister<TFormValues>
+  name?: keyof TFormValues & string
   error?: string
 }
 
-const InputWithIcon = forwardRef<HTMLInputElement, InputWithIconProps>(
-  ({ className, register, name, type, icon, ...props },) => {
+const InputWithIcon = forwardRef<HTMLInputElement, InputWithIconProps<any>>(
+  ({ className, register, name, type, icon, ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false)
     const isPassword = type === "password"
     const inputType = isPassword && showPassword ? "text" : type
@@ -43,10 +43,11 @@ const InputWithIcon = forwardRef<HTMLInputElement, InputWithIconProps>(
           {...(register && name ? register(name) : {})}
           {...props}
           type={inputType}
+          ref={ref}
           className={cn(
-            "block w-full  sm:text-sm rounded-md h-10",
+            "block w-full sm:text-sm rounded-md h-10",
             "border border-input bg-background px-3 py-2",
-            "pl-10", // 🛠️ Add padding-left to prevent overlap with icon
+            "pl-10",
             "focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]",
             className
           )}

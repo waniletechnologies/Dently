@@ -1,6 +1,6 @@
 "use client"
 
-import { MdPhone, MdAttachMoney, MdTrendingUp, MdSettings, MdLogout, MdBarChart, MdPlayCircle } from "react-icons/md"
+import { MdPhone, MdTrendingUp, MdLogout } from "react-icons/md"
 import { dashboardData } from "@/lib/db"
 import { TbSmartHome } from "react-icons/tb"
 import { HiUsers, HiCurrencyDollar, HiChartBar, HiCog } from "react-icons/hi"

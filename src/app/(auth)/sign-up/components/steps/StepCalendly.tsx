@@ -56,7 +56,7 @@ export function StepCalendly({ onNext }: { onNext: () => void }) {
             </div>
             <div className="bg-white border rounded-md px-6 py-4 mb-6 w-full">
               <div className="font-semibold text-sm mb-2">Available appointment slots</div>
-              {slots.map((slot, idx) => (
+              {slots.map((slot) => (
                 <div key={slot.label} className="mb-2">
                   <div className="text-xs text-gray-500 mb-1">{slot.label}</div>
                   <div className="flex flex-wrap gap-2">

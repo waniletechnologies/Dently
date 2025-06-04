@@ -17,11 +17,13 @@ const resetPasswordSchema = z.object({
   path: ["confirmPassword"],
 });
 
+type ResetPasswordFormData = z.infer<typeof resetPasswordSchema>;
+
 export default function ResetPasswordPage() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm<ResetPasswordFormData>({
     resolver: zodResolver(resetPasswordSchema),
     defaultValues: {
       password: "",
@@ -29,7 +31,7 @@ export default function ResetPasswordPage() {
     }
   });
 
-  const onSubmit = async (data: { password: string; confirmPassword: string }) => {
+  const onSubmit = async (data: ResetPasswordFormData) => {
     try {
       setIsSubmitting(true);
       await new Promise(resolve => setTimeout(resolve, 1000));
