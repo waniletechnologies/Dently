@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChevronRight } from "lucide-react"
+import { MdChevronRight } from "react-icons/md"
 import { useRouter, usePathname } from "next/navigation"
 import { useState } from "react"
 import { useSidebar } from "@/contexts/SidebarContext"
@@ -47,7 +47,7 @@ export function NavItem({ title, icon: Icon, path, active, hasSubmenu, submenuIt
         <Icon className="mr-3 h-4 w-4 shrink-0" />
         <span className="truncate">{title}</span>
         {hasSubmenu && (
-          <ChevronRight 
+          <MdChevronRight 
             className={`ml-auto h-4 w-4 shrink-0 transition-transform ${isSubmenuOpen ? 'rotate-90' : ''}`} 
           />
         )}

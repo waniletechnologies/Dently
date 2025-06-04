@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { logo } from "../../../../../public/images";
-import { Check } from "lucide-react";
+import { HiCheck } from "react-icons/hi";
 
 const steps = [
   {
@@ -49,7 +49,7 @@ export function SignUpStepper({ currentStep }: { currentStep: number }) {
                     : "w-5 h-5 rounded-full flex items-center justify-center border-2 border-gray-300 text-gray-300 bg-white"
                 }
               >
-                <Check size={12} />
+                <HiCheck size={12} />
               </span>
               <div>
                 <div

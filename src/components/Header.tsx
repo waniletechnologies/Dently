@@ -1,7 +1,7 @@
 "use client"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Bell } from "lucide-react"
+import { MdNotifications } from "react-icons/md"
 import { FiSidebar } from "react-icons/fi"
 import { TbSmartHome } from "react-icons/tb"
 import { profile } from "../../public/images"
@@ -32,7 +32,7 @@ export function Header() {
           </div>
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
-          <Bell className="h-5 w-5" />
+          <MdNotifications className="h-5 w-5" />
           <Avatar className="h-8 w-8">
             <AvatarImage src={profile.src} alt="profile" />
             <AvatarFallback className="bg-[#f4f5f7] text-[#171717]">JM</AvatarFallback>

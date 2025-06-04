@@ -4,9 +4,9 @@ import type React from "react"
 
 import { forwardRef, useState } from "react"
 import { cn } from "@/lib/utils"
-import { Eye, EyeOff, Mail, User, Lock } from "lucide-react"
 import { UseFormRegister } from "react-hook-form"
 import { FieldValues } from "react-hook-form"
+import { FiEye, FiEyeOff,  FiLock, FiMail, FiUser } from "react-icons/fi"
 
 export interface InputWithIconProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: "mail" | "user" | "lock"
@@ -24,11 +24,11 @@ const InputWithIcon = forwardRef<HTMLInputElement, InputWithIconProps>(
     const getIcon = () => {
       switch (icon) {
         case "mail":
-          return <Mail className="h-5 w-5 text-muted-foreground" />
+          return <FiMail className="h-5 w-5 text-muted-foreground" />
         case "user":
-          return <User className="h-5 w-5 text-muted-foreground" />
+          return <FiUser className="h-5 w-5 text-muted-foreground" />
         case "lock":
-          return <Lock className="h-5 w-5 text-muted-foreground" />
+          return <FiLock className="h-5 w-5 text-muted-foreground" />
         default:
           return null
       }
@@ -57,7 +57,7 @@ const InputWithIcon = forwardRef<HTMLInputElement, InputWithIconProps>(
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-[50%] -translate-y-1/2 flex items-center pointer-events-auto"
           >
-            {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+            {showPassword ? <FiEyeOff className="h-5 w-5" /> : <FiEye className="h-5 w-5" />}
             <span className="sr-only">{showPassword ? "Hide password" : "Show password"}</span>
           </button>
         )}

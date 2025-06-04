@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckCircle, AlertTriangle } from "lucide-react";
+import { HiCheckCircle, HiExclamationCircle } from "react-icons/hi";
 import Image from "next/image";
 import { meta } from "../../../../../../public/images";
 
@@ -42,7 +42,7 @@ export function StepMetaAds({ onNext }: { onNext: () => void }) {
         {status === "success" && (
           <>
             <div className="bg-green-100 text-green-800 rounded-md px-6 py-3 text-center mb-6 text-sm font-medium flex items-center gap-2 justify-center">
-              <CheckCircle size={18} className="text-green-600" />
+              <HiCheckCircle size={18} className="text-green-600" />
               Successfully connected to Meta Ads
             </div>
             <button
@@ -63,7 +63,7 @@ export function StepMetaAds({ onNext }: { onNext: () => void }) {
         {status === "idle" && (
           <>
             <div className="bg-yellow-100 text-yellow-800 rounded-md px-6 py-3 text-center mb-6 text-sm font-medium flex items-center gap-2 justify-center">
-              <AlertTriangle size={18} className="text-yellow-600" />
+              <HiExclamationCircle size={18} className="text-yellow-600" />
               Connect your Meta Ads account to manage campaigns and track performance effortlessly
             </div>
             <button

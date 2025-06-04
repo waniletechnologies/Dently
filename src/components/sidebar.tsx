@@ -1,8 +1,10 @@
 "use client"
 
-import { Phone, Users, DollarSign, TrendingUp, Settings, LogOut, BarChart3, TvMinimalPlay } from "lucide-react"
+import { MdPhone, MdAttachMoney, MdTrendingUp, MdSettings, MdLogout, MdBarChart, MdPlayCircle } from "react-icons/md"
 import { dashboardData } from "@/lib/db"
 import { TbSmartHome } from "react-icons/tb"
+import { HiUsers, HiCurrencyDollar, HiChartBar, HiCog } from "react-icons/hi"
+import { BsTv } from "react-icons/bs"
 import Image from "next/image"
 import { logo } from "../../public/images"
 import { NavItem } from "./NavItem"
@@ -13,13 +15,13 @@ import { usePathname } from "next/navigation"
 
 const iconMap = {
   TbSmartHome,
-  Phone,
-  Users,
-  DollarSign,
-  TrendingUp,
-  Settings,
-  BarChart3,
-  TvMinimalPlay,
+  Phone: MdPhone,
+  Users: HiUsers,
+  DollarSign: HiCurrencyDollar,
+  TrendingUp: MdTrendingUp,
+  BarChart3: HiChartBar,
+  TvMinimalPlay: BsTv,
+  Settings: HiCog,
 }
 
 const SidebarContent = () => {
@@ -55,7 +57,7 @@ const SidebarContent = () => {
       {/* Logout */}
       <div className="p-2 border-t border-[#e1e1e1] shrink-0">
         <Button variant="ghost" className="w-full justify-start text-[#dc2626] hover:text-[#dc2626] hover:bg-red-50">
-          <LogOut className="mr-3 h-4 w-4" />
+          <MdLogout className="mr-3 h-4 w-4" />
           Logout
         </Button>
       </div>

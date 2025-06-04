@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PhoneCall, CheckCircle, Check } from "lucide-react";
+import { MdPhone, MdCheckCircle, MdCheck } from "react-icons/md";
 
 export function StepAircall({ onNext }: { onNext: () => void }) {
   const [status, setStatus] = useState<"idle" | "connecting" | "success">("idle");
@@ -29,12 +29,12 @@ export function StepAircall({ onNext }: { onNext: () => void }) {
         <p className="text-gray-500 mb-8 text-center">
           Link your call system for smarter communication
         </p>
-        <PhoneCall size={64} className="mb-8 text-orange-500" />
+        <MdPhone size={64} className="mb-8 text-orange-500" />
 
         {status === "success" && (
           <>
             <div className="bg-green-100 text-green-800 rounded-md px-6 py-3 text-center mb-6 text-sm font-medium flex items-center gap-2 justify-center">
-              <CheckCircle size={18} className="text-green-600" />
+              <MdCheckCircle size={18} className="text-green-600" />
               Successfully connected to Aircall
             </div>
             <div className="bg-white border rounded-md px-6 py-4 mb-6 w-full">
@@ -50,13 +50,13 @@ export function StepAircall({ onNext }: { onNext: () => void }) {
                 <div className="font-semibold text-sm mb-2">Call Tracking and Coaching</div>
                 <ul className="space-y-1 text-sm">
                   <li className="flex items-center gap-2 text-[#848484]">
-                    <Check size={16} className="text-[#52884B]" /> Call transcription enabled
+                    <MdCheck size={16} className="text-[#52884B]" /> Call transcription enabled
                   </li>
                   <li className="flex items-center gap-2 text-[#848484]">
-                    <Check size={16} className="text-[#52884B]"/> Staff performance metrics
+                    <MdCheck size={16} className="text-[#52884B]"/> Staff performance metrics
                   </li>
                   <li className="flex items-center gap-2 text-[#848484]">
-                    <Check size={16} className="text-[#52884B]" /> Missed opportunity alerts
+                    <MdCheck size={16} className="text-[#52884B]" /> Missed opportunity alerts
                   </li>
                 </ul>
               </div>

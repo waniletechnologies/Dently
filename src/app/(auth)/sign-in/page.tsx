@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { useRouter } from 'next/navigation'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
-import { LogIn } from 'lucide-react'
+import { FiLogIn } from 'react-icons/fi'
 
 const SignInPage = () => {
     const router = useRouter();
@@ -40,7 +40,7 @@ const SignInPage = () => {
               <Checkbox id="remember" className="h-4 w-4" />
               <Label htmlFor="remember" className="font-medium text-xs leading-none tracking-tighter">Remember me</Label>
             </div>
-            <Button onClick={() => router.push('/dashboard')} className='w-full rounded-lg bg-primary cursor-pointer hover:bg-primary/80 text-white font-semibold flex items-center justify-center gap-2 py-2'>Sign in <LogIn size={18}/></Button>
+            <Button onClick={() => router.push('/dashboard')} className='w-full rounded-lg bg-primary cursor-pointer hover:bg-primary/80 text-white font-semibold flex items-center justify-center gap-2 py-2'>Sign in <FiLogIn size={18}/></Button>
           </form>
           <p className="font-normal text-sm leading-none tracking-tighter text-center mt-6">Don&apos;t have an account? 
             <span 

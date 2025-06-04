@@ -1,6 +1,6 @@
 "use client";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import React, { useState } from "react";
+import { FiChevronLeft, FiChevronRight, FiStar } from "react-icons/fi";
 
 const testimonials = [
   {
@@ -36,16 +36,16 @@ export function TestimonialCarousel() {
         <div className="font-medium text-[#FFFFFF] text-[13px] leading-[20px] tracking-[-0.03em]">{testimonial.title}</div>
         <div className="flex items-center mt-1">
           {[...Array(testimonial.rating)].map((_, i) => (
-            <Star key={i} className="text-yellow-400 w-4 h-4" />
+            <FiStar key={i} className="text-yellow-400 w-4 h-4" />
           ))}
         </div>
       </div>
       <div className="flex justify-end gap-2 mt-1">
         <button onClick={prev} className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
-          <ChevronLeft className="h-4 w-4" />
+          <FiChevronLeft className="h-4 w-4" />
         </button>
         <button onClick={next} className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition">
-          <ChevronRight className="h-4 w-4" />
+          <FiChevronRight className="h-4 w-4" />
         </button>
       </div>
     </div>

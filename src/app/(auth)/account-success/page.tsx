@@ -1,4 +1,5 @@
-import { Check, CheckCircle } from "lucide-react";
+import { FiCheck } from "react-icons/fi";
+
 
 export default function AccountSuccess() {
   return (
@@ -6,7 +7,7 @@ export default function AccountSuccess() {
     <div className="flex flex-col items-center justify-center bg-white rounded-2xl p-6 w-full max-w-sm">
       <div className="bg-[#FFF9ED] rounded-2xl p-12 flex flex-col items-center w-full max-w-sm">
         <div className="bg-[#F68A1E] rounded-full mb-2">
-        <Check size={56} className="text-white" />
+        <FiCheck size={56} className="text-white" />
         </div>
         <div className="mb-6 text-[#808080] font-normal text-[18px] leading-[29px] tracking-normal text-center">
         Congratulations, your account has been successfully setup

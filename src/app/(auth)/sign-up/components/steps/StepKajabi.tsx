@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckCircle } from "lucide-react";
+import { HiCheckCircle } from "react-icons/hi";
 import Image from "next/image";
 import { kejabi } from "../../../../../../public/images";
 
@@ -34,7 +34,7 @@ export function StepKajabi({ onNext }: { onNext: () => void }) {
         {status === "success" && (
           <>
             <div className="bg-green-100 text-green-800 rounded-md px-6 py-3 text-center mb-6 text-sm font-medium flex items-center gap-2 justify-center">
-              <CheckCircle size={18} className="text-green-600" />
+              <HiCheckCircle size={18} className="text-green-600" />
               Successfully connected to Kajabi
             </div>
             <button

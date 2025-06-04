@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Eye, EyeOff } from "lucide-react";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 
@@ -116,7 +116,7 @@ export function StepAccount({ onNext }: { onNext: () => void }) {
               onClick={() => setShow((s) => !s)}
               tabIndex={-1}
             >
-              {show ? <EyeOff size={18} /> : <Eye size={18} />}
+              {show ? <MdVisibilityOff size={18} /> : <MdVisibility size={18} />}
             </button>
           </div>
           {errors.password && (

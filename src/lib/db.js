@@ -199,7 +199,7 @@ export const dashboardData = {
           { title: "Appointments", path: "/client-managment/appointments" }
         ]
       },
-      { title: "Finances", icon: "DollarSign", active: false, path: "/finances" },
+      { title: "Finances", icon: "DollarSign", active: false, path: "/financial-data" },
       { title: "Pam's Insights", icon: "TrendingUp", active: false, path: "/insights" },
       { 
         title: "Social Media Analytics", 
@@ -822,3 +822,141 @@ export const dashboardData = {
     },
   }
   
+export const financialData = {
+  data: [
+    {
+      id: 1,
+      date: "Dec 15, 2023",
+      patient: "Dianne Russell",
+      description: "Regular checkup",
+      amount: "£446.61",
+      method: "Insurance",
+      status: "Paid"
+    },
+    {
+      id: 2,
+      date: "Dec 15, 2023",
+      patient: "Ronald Richards",
+      description: "Teeth Cleaning",
+      amount: "£275.43",
+      method: "Card",
+      status: "Paid"
+    },
+    {
+      id: 3,
+      date: "Dec 15, 2023",
+      patient: "Esther Howard",
+      description: "Consultation",
+      amount: "£948.55",
+      method: "Cash",
+      status: "Pending"
+    },
+    {
+      id: 4,
+      date: "Dec 15, 2023",
+      patient: "Floyd Miles",
+      description: "Root Canal",
+      amount: "£200.00",
+      method: "Bank Transfer",
+      status: "Overdue"
+    },
+    {
+      id: 5,
+      date: "Dec 15, 2023",
+      patient: "Eleanor Pena",
+      description: "Filling",
+      amount: "£475.22",
+      method: "Card",
+      status: "Paid"
+    },
+    {
+      id: 6,
+      date: "Dec 15, 2023",
+      patient: "Bessie Cooper",
+      description: "Consultation",
+      amount: "£105.55",
+      method: "Cash",
+      status: "Paid"
+    },
+    {
+      id: 7,
+      date: "Dec 15, 2023",
+      patient: "Wade Warren",
+      description: "Teeth Cleaning",
+      amount: "£778.35",
+      method: "Card",
+      status: "Pending"
+    },
+    {
+      id: 8,
+      date: "Dec 15, 2023",
+      patient: "Brooklyn Simmons",
+      description: "Filling",
+      amount: "£854.08",
+      method: "Cash",
+      status: "Paid"
+    },
+    {
+      id: 9,
+      date: "Dec 15, 2023",
+      patient: "Devon Lane",
+      description: "Teeth Cleaning",
+      amount: "£943.65",
+      method: "Card",
+      status: "Pending"
+    },
+    {
+      id: 10,
+      date: "Dec 15, 2023",
+      patient: "Leslie Alexander",
+      description: "Filling",
+      amount: "£202.87",
+      method: "Bank Transfer",
+      status: "Paid"
+    },
+    {
+      id: 11,
+      date: "Dec 15, 2023",
+      patient: "Leslie Alexander",
+      description: "Filling",
+      amount: "£202.87",
+      method: "Bank Transfer",
+      status: "Paid"
+    }
+  ],
+  filterOptions: {
+    timeFrames: [
+      { value: "all", label: "All" },
+      { value: "this-week", label: "This Week" },
+      { value: "this-month", label: "This Month" },
+      { value: "last-month", label: "Last Month" },
+    ],
+    statuses: [
+      { value: "all", label: "All" },
+      { value: "paid", label: "Paid" },
+      { value: "pending", label: "Pending" },
+      { value: "overdue", label: "Overdue" },
+    ],
+    method: [
+      { value: "all", label: "All" },
+      { value: "insurance", label: "Insurance" },
+      { value: "cash", label: "Cash" },
+      { value: "card", label: "Card" },
+      { value: "bank-transfer", label: "Bank Transfer" },
+    ],
+  },
+  metrics: [
+      {
+        title: "Total Revenue",
+        value: "£350.00",
+      },
+      {
+        title: "Pending Payments",
+        value: "£850.00",
+      },
+      {
+        title: "Overdue Payments",
+        value: "£200.00",
+      },
+    ],
+};

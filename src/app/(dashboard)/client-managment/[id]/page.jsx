@@ -1,5 +1,5 @@
 "use client"
-import { PatientDetails } from "../components/patient-details"
+import { PatientDetails } from "../patients/components/patient-details"
 
 export default function PatientDetailPage({ params }) {
   return (

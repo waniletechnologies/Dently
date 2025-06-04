@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, CheckCircle } from "lucide-react";
+import { MdCalendarToday, MdCheckCircle } from "react-icons/md";
 
 const slots = [
   {
@@ -46,12 +46,12 @@ export function StepCalendly({ onNext }: { onNext: () => void }) {
             ? "Let Pam manage appointments and bookings automatically"
             : "Manage your appointments and bookings in one platform"}
         </p>
-        <Calendar size={64} className="mb-8 text-orange-500" />
+        <MdCalendarToday size={64} className="mb-8 text-orange-500" />
 
         {status === "success" && (
           <>
             <div className="bg-green-100 text-green-800 rounded-md px-6 py-3 text-center mb-6 text-sm font-medium flex items-center gap-2 justify-center">
-              <CheckCircle size={18} className="text-green-600" />
+              <MdCheckCircle size={18} className="text-green-600" />
               Successfully connected to Calendly
             </div>
             <div className="bg-white border rounded-md px-6 py-4 mb-6 w-full">

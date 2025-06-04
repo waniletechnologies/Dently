@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "../../../../../../public/images";
 import Image from "next/image";
-import { CheckCircle, AlertTriangle } from "lucide-react";
+import { HiCheckCircle, HiExclamationCircle } from "react-icons/hi";
 
 export function StepDentally({ onNext }: { onNext: () => void }) {
   const [status, setStatus] = useState<"idle" | "connecting" | "success">("idle");
@@ -35,7 +35,7 @@ export function StepDentally({ onNext }: { onNext: () => void }) {
         {status === "success" && (
           <div className="w-full flex flex-col items-center">
             <div className="bg-green-100 text-green-800 rounded-md px-6 py-3 text-center mb-3 text-sm font-medium flex items-center gap-2 justify-center">
-              <CheckCircle size={18} className="text-green-600" />
+              <HiCheckCircle size={18} className="text-green-600" />
               Successfully Connected to Dentally
             </div>
           </div>
