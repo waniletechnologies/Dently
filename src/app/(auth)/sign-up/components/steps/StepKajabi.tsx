@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { HiCheckCircle } from "react-icons/hi";
 import Image from "next/image";
 import { kejabi } from "../../../../../../public/images";
-
+import { useRouter } from "next/navigation";
 export function StepKajabi({ onNext }: { onNext: () => void }) {
   const [status, setStatus] = useState<"idle" | "connecting" | "success">("idle");
+  const router = useRouter();
 
   const handleConnect = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +25,7 @@ export function StepKajabi({ onNext }: { onNext: () => void }) {
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
         <h2 className="text-3xl font-bold mb-2 text-center">Connect Kajabi</h2>
         <p className="text-gray-500 mb-8 text-center">
-          Improve your team's skills with training courses<br />recommended by Pam
+          Improve your team&apos;s skills with training courses<br />recommended by Pam
         </p>
         <Image
           src={kejabi}
@@ -38,6 +39,7 @@ export function StepKajabi({ onNext }: { onNext: () => void }) {
               Successfully connected to Kajabi
             </div>
             <button
+              onClick={() => router.push("/dashboard")}
               type="submit"
               className="bg-orange-500 text-white py-2 px-6 rounded font-semibold text-base mt-2 w-full"
             >
