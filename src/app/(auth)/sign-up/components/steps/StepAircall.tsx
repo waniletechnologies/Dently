@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdPhone, MdCheckCircle, MdCheck } from "react-icons/md";
 
 export function StepAircall({ onNext }: { onNext: () => void }) {
@@ -79,7 +79,7 @@ export function StepAircall({ onNext }: { onNext: () => void }) {
         {status === "idle" && (
           <>
             <div className="bg-yellow-100 text-yellow-800 rounded-md px-6 py-3 text-center mb-6 text-sm font-medium">
-              Pam will never edit patients' data without your permission.
+              Pam will never edit patient&apos;s data without your permission.
             </div>
             <button
               type="submit"

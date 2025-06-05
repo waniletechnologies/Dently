@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HiCheckCircle } from "react-icons/hi";
 import Image from "next/image";
 import { kejabi } from "../../../../../../public/images";
@@ -24,7 +24,7 @@ export function StepKajabi({ onNext }: { onNext: () => void }) {
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
         <h2 className="text-3xl font-bold mb-2 text-center">Connect Kajabi</h2>
         <p className="text-gray-500 mb-8 text-center">
-          Improve your team's skills with training courses<br />recommended by Pam
+          Improve your team&apos;s skills with training courses<br />recommended by Pam
         </p>
         <Image
           src={kejabi}

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { FiCheck } from "react-icons/fi";
 
 
@@ -12,12 +13,12 @@ export default function AccountSuccess() {
         <div className="mb-6 text-[#808080] font-normal text-[18px] leading-[29px] tracking-normal text-center">
         Congratulations, your account has been successfully setup
         </div>
-        <button
+        <Button
           className="bg-[#F68A1E] text-white px-8 py-2 rounded font-semibold text-sm"
           // onClick={() => router.push("/dashboard")} // Uncomment and set your route
         >
           Continue
-        </button>
+        </Button>
       </div>
     </div>
     </div>
