@@ -221,18 +221,18 @@ export const dashboardData = {
       active: false,
       path: "/insights",
     },
-    {
-      title: "Social Media Analytics",
-      icon: "BarChart3",
-      active: false,
-      path: "/social-media",
+    { 
+      title: "Social Media Analytics", 
+      icon: "BarChart3", 
+      active: false, 
+      path: "/social-media-analytics",
       hasSubmenu: true,
       submenuItems: [
-        { title: "Overview", path: "/social-media/overview" },
-        { title: "Ad Performance", path: "/social-media/ad-performance" },
-        { title: "Social Growth", path: "/social-media/growth" },
-        { title: "Recommendations", path: "/social-media/recommendations" },
-      ],
+        { title: "Overview", path: "/social-media-analytics/overview" },
+        { title: "Ad Performance", path: "/social-media-analytics/ad-performance" },
+        { title: "Social Growth", path: "#" }, //social-media-analytics/social-growth
+        { title: "Recommendations", path: "#" } //social-media-analytics/recommendations
+      ]
     },
     {
       title: "Coaching",
@@ -1194,3 +1194,166 @@ export const InsightsData = {
     }
   ]
 };
+export const performanceData = [
+  { date: "Apr 1", conversions: 280, clicks: 120 },
+  { date: "Apr 4", conversions: 320, clicks: 110 },
+  { date: "Apr 7", conversions: 380, clicks: 125 },
+  { date: "Apr 10", conversions: 420, clicks: 140 },
+  { date: "Apr 13", conversions: 350, clicks: 115 },
+  { date: "Apr 15", conversions: 410, clicks: 130 },
+  { date: "Apr 16", conversions: 480, clicks: 145 },
+  { date: "Apr 19", conversions: 520, clicks: 160 },
+  { date: "Apr 22", conversions: 450, clicks: 135 },
+  { date: "Apr 25", conversions: 390, clicks: 120 },
+]
+
+export const impressionsData = [
+  { date: "Apr 1", impressions: 2800 },
+  { date: "Apr 4", impressions: 3200 },
+  { date: "Apr 7", impressions: 2900 },
+  { date: "Apr 10", impressions: 4200 },
+  { date: "Apr 13", impressions: 3800 },
+  { date: "Apr 15", impressions: 5200 },
+  { date: "Apr 16", impressions: 4100 },
+  { date: "Apr 19", impressions: 4800 },
+  { date: "Apr 22", impressions: 3600 },
+  { date: "Apr 25", impressions: 3200 },
+]
+
+export const campaignDetails = [
+  {
+    name: "New Patient Special - Image Ad",
+    impressions: "23,458",
+    conversions: 50,
+    clicks: 1420,
+    ctr: "5.3%",
+    status: "Active",
+    roas: "4.2x",
+  },
+  {
+    name: "Teeth Whitening - Video Ad",
+    impressions: "18,972",
+    conversions: 94,
+    clicks: 987,
+    ctr: "5.2%",
+    status: "Active",
+    roas: "3.8x",
+  },
+  {
+    name: "Free Consultation - Carousel",
+    impressions: "15,643",
+    conversions: 78,
+    clicks: 554,
+    ctr: "5.3%",
+    status: "Active",
+    roas: "3.6x",
+  },
+  {
+    name: "Family Check-up - Image Ad",
+    impressions: "12,589",
+    conversions: 65,
+    clicks: 235,
+    ctr: "5.6%",
+    status: "Active",
+    roas: "3.9x",
+  },
+  {
+    name: "Emergency Care - Image Ad",
+    impressions: "9,876",
+    conversions: 42,
+    clicks: 624,
+    ctr: "5.2%",
+    status: "Active",
+    roas: "3.5x",
+  },
+]
+export  const followersData = [
+  { date: "Apr 1", instagram: 7500, facebook: 2800 },
+  { date: "Apr 4", instagram: 7800, facebook: 2900 },
+  { date: "Apr 7", instagram: 8200, facebook: 3100 },
+  { date: "Apr 10", instagram: 8600, facebook: 3200 },
+  { date: "Apr 13", instagram: 9100, facebook: 3400 },
+  { date: "Apr 16", instagram: 8217, facebook: 3300 },
+  { date: "Apr 19", instagram: 8800, facebook: 3500 },
+  { date: "Apr 22", instagram: 9200, facebook: 3600 },
+  { date: "Apr 25", instagram: 9500, facebook: 3700 },
+]
+
+export const engagementData = [
+  { day: "Mon", likes: 450, comments: 280, shares: 120 },
+  { day: "Tue", likes: 320, comments: 310, shares: 150 },
+  { day: "Wed", likes: 480, comments: 290, shares: 140 },
+  { day: "Thu", likes: 520, comments: 180, shares: 160 },
+  { day: "Fri", likes: 420, comments: 250, shares: 130 },
+  { day: "Sat", likes: 380, comments: 220, shares: 110 },
+  { day: "Sun", likes: 580, comments: 340, shares: 180 },
+]
+
+  export const conversionsData = [
+    { date: "Apr 1", conversions: 320, clicks: 120 },
+    { date: "Apr 4", conversions: 280, clicks: 100 },
+    { date: "Apr 7", conversions: 350, clicks: 110 },
+    { date: "Apr 10", conversions: 420, clicks: 130 },
+    { date: "Apr 13", conversions: 380, clicks: 115 },
+    { date: "Apr 15", conversions: 410, clicks: 125 },
+    { date: "Apr 16", conversions: 450, clicks: 140 },
+    { date: "Apr 19", conversions: 520, clicks: 150 },
+    { date: "Apr 22", conversions: 480, clicks: 135 },
+    { date: "Apr 25", conversions: 390, clicks: 120 },
+  ]
+  
+  export const spendData = [
+    { date: "Apr 1", spend: 150 },
+    { date: "Apr 4", spend: 200 },
+    { date: "Apr 7", spend: 180 },
+    { date: "Apr 10", spend: 220 },
+    { date: "Apr 13", spend: 300 },
+    { date: "Apr 15", spend: 450 },
+    { date: "Apr 16", spend: 280 },
+    { date: "Apr 19", spend: 320 },
+    { date: "Apr 22", spend: 290 },
+    { date: "Apr 25", spend: 250 },
+  ]
+  
+  export const campaignData = [
+    {
+      name: "New Patient Promo",
+      spend: "£400",
+      conversions: 50,
+      clicks: 1420,
+      status: "Active",
+      roas: "4.2x",
+    },
+    {
+      name: "Teeth Whitening",
+      spend: "£400",
+      conversions: 94,
+      clicks: 987,
+      status: "Active",
+      roas: "3.8x",
+    },
+    {
+      name: "Invisalign Offer",
+      spend: "£450",
+      conversions: 78,
+      clicks: 554,
+      status: "Active",
+      roas: "3.1x",
+    },
+    {
+      name: "Family Dentistry",
+      spend: "£400",
+      conversions: 65,
+      clicks: 235,
+      status: "Active",
+      roas: "2.9x",
+    },
+    {
+      name: "Emergency Care",
+      spend: "£400",
+      conversions: 47,
+      clicks: 624,
+      status: "Active",
+      roas: "2.3x",
+    },
+  ]
