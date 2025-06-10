@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdCalendarToday, MdCheckCircle } from "react-icons/md";
 
 const slots = [

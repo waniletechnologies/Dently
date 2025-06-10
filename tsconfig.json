@@ -33,7 +33,7 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-, "src/app/(dashboard)/financial-data/layout.jsx"  ],
+, "src/app/(dashboard)/financial-data/layout.jsx", "src/app/(dashboard)/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

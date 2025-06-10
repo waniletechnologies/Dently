@@ -30,7 +30,11 @@ const SignInPage = () => {
               <div className="flex justify-between items-center">
                 <Label htmlFor="password" className="font-sans font-medium text-sm leading-5 tracking-normal">Password<span className="text-orange-500"> *</span></Label>
                 <span 
-                  onClick={()=> router.push('/forgot-password')}
+                  onClick={() => router.push('/forgot-password')}
+                  onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') router.push('/forgot-password'); }}
+                  tabIndex={0}
+                  // biome-ignore lint/a11y/useSemanticElements: <explanation>
+                  role="button"
                   className="text-[#EA4335] cursor-pointer font-medium text-[10px] leading-none tracking-tighter hover:underline"
                 >Forgot Password?</span>
               </div>
@@ -45,6 +49,10 @@ const SignInPage = () => {
           <p className="font-normal text-sm leading-none tracking-tighter text-center mt-6">Don&apos;t have an account? 
             <span 
               onClick={() => router.push('/sign-up')}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') router.push('/sign-up'); }}
+              tabIndex={0}
+              // biome-ignore lint/a11y/useSemanticElements: <explanation>
+              role="button"
               className="underline cursor-pointer font-medium ml-1"
             >Sign up</span>
           </p>

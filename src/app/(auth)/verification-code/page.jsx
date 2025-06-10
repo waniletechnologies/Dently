@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { AuthLayout } from '../components/auth-layout'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
@@ -7,7 +7,6 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useRouter } from 'next/navigation'
 import { z } from 'zod'
 
 const verificationSchema = z.object({
@@ -17,10 +16,9 @@ const verificationSchema = z.object({
 });
 
 const VerificationCodePage = () => {
-  const router = useRouter()
   const [activeInput, setActiveInput] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const inputRefs = useRef([]);
+  const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
 
   const form = useForm({
@@ -28,7 +26,7 @@ const VerificationCodePage = () => {
     defaultValues: { code: ["", "", "", "", "", ""] }
   });
 
-  const handleChange = (e, index) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const value = e.target.value;
     const currentCode = form.getValues("code");
     const newCode = [...currentCode];
@@ -39,18 +37,18 @@ const VerificationCodePage = () => {
       setActiveInput(index + 1);
     }
   };
-  const handleKeyDown = (e, index) => {
-    if (e.key === "Backspace" && !e.target.value && index > 0) {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
+    if (e.key === "Backspace" && !e.currentTarget.value && index > 0) {
       inputRefs.current[index - 1]?.focus();
       setActiveInput(index - 1);
     }
   };
 
-    const handlePaste = (e) => {
+    const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
         e.preventDefault();
         const pastedData = e.clipboardData.getData("text").slice(0, 6).split("");
         const newCode = [...form.getValues("code")];
-        pastedData.forEach((digit, index) => {
+        pastedData.forEach((digit: string, index: number) => {
         if (index < 6) {
             newCode[index] = digit;
             inputRefs.current[index]?.focus();
@@ -58,9 +56,8 @@ const VerificationCodePage = () => {
         });
         form.setValue("code", newCode);
     };
-    const onSubmit = (data) => {
+    const onSubmit = (data: z.infer<typeof verificationSchema>) => {
         setIsLoading(true);
-        // Simulate async verification, replace with real API call
         setTimeout(() => {
             console.log("Verification Code Submitted:", data.code.join(""));
             setIsLoading(false);
@@ -91,7 +88,9 @@ const VerificationCodePage = () => {
                                   onChange={(e) => handleChange(e, index)}
                                   onKeyDown={(e) => handleKeyDown(e, index)}
                                   onPaste={handlePaste}
-                                  ref={(el) => (inputRefs.current[index] = el)}
+                                  ref={(el) => {
+                                    inputRefs.current[index] = el;
+                                  }}
                                   className={`h-16 w-12 text-center text-xl bg-white font-medium ${
                                     activeInput === index ? 'border-primary' : 'border-[#CBD0DC]'
                                   }`}
