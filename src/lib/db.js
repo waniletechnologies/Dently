@@ -1136,3 +1136,61 @@ export const timeSlots = [
   "4:30 pm",
   "5:00 pm",
 ];
+
+export const InsightsData = {
+  filterOptions: {
+    timeFrames: [
+      { value: "all", label: "All" },
+      { value: "last-30-days", label: "Last 30 Days" },
+      { value: "last-3-days", label: "Last 3 Days" },
+      { value: "last-6-months", label: "Last 6 Months" },
+      { value: "last-year", label: "Last Year" },
+      { value: "custom-date", label: "Custom Date" },
+    ],
+    statuses: [
+      { value: "all", label: "All" },
+      { value: "paid", label: "Paid" },
+      { value: "pending", label: "Pending" },
+      { value: "overdue", label: "Overdue" },
+    ],
+    method: [
+      { value: "all", label: "All" },
+      { value: "insurance", label: "Insurance" },
+      { value: "cash", label: "Cash" },
+      { value: "card", label: "Card" },
+      { value: "bank-transfer", label: "Bank Transfer" },
+    ],
+  },
+  metrics: [
+    {
+      title: "Total Patients",
+      value: 1254,
+      change: "+15%"
+    },
+    {
+      title: "Total Revenue",
+      value: "£52,450",
+      change: "+15%"
+    },
+    {
+      title: "Conversion Rate",
+      value: "68%",
+      change: "+15%"
+    },
+    {
+      title: "Appointment Fill Rate",
+      value: "92%",
+      change: "+15%"
+    },
+    {
+      title: "No Show Rate",
+      value: "8.5%",
+      change: "-18%"
+    },
+    {
+      title: "Average Treatment Value",
+      value: "£420",
+      change: "+15%"
+    }
+  ]
+};
