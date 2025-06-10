@@ -45,18 +45,18 @@ export default function PatientsPage() {
   }
 
   return (
-        <main className="sm:p-6 p-3 bg-[#f9f8fa] ">
-          <h1 className="text-2xl font-semibold text-[#171717] mb-6">Patients</h1>
+    <main className="sm:p-6 p-3 min-h-screen bg-[#f9f8fa] ">
+      <h1 className="text-2xl font-semibold text-[#171717] mb-6">Patients</h1>
 
-          <PatientsFilter onAddPatient={handleAddPatient} onFilterChange={handleFilterChange} />
+      <PatientsFilter onAddPatient={handleAddPatient} onFilterChange={handleFilterChange} />
 
-          <div className="bg-white rounded-md border border-[#e1e1e1] overflow-hidden">
-            <PatientsTable
-              onViewPatient={handleViewPatient}
-              onEditPatient={handleEditPatient}
-              onDeletePatient={handleDeletePatient}
-            />
-            {/* <div className="p-4 border-t border-[#e1e1e1]">
+      <div className="bg-white rounded-md border border-[#e1e1e1] overflow-hidden">
+        <PatientsTable
+          onViewPatient={handleViewPatient}
+          onEditPatient={handleEditPatient}
+          onDeletePatient={handleDeletePatient}
+        />
+        {/* <div className="p-4 border-t border-[#e1e1e1]">
               <PatientsPagination
                 currentPage={currentPage}
                 totalPages={8}
@@ -64,13 +64,13 @@ export default function PatientsPage() {
                 onPageChange={handlePageChange}
               />
             </div> */}
-          </div>
+      </div>
 
-          <AddPatientModal
-            isOpen={isAddPatientModalOpen}
-            onClose={() => setIsAddPatientModalOpen(false)}
-            onAddPatient={handleAddPatientSubmit}
-          />
-        </main>
+      <AddPatientModal
+        isOpen={isAddPatientModalOpen}
+        onClose={() => setIsAddPatientModalOpen(false)}
+        onAddPatient={handleAddPatientSubmit}
+      />
+    </main>
   )
 }

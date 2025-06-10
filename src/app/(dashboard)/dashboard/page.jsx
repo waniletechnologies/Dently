@@ -15,7 +15,7 @@ export default function Dashboard() {
           </div>
           <div>
             <Select defaultValue="Daily">
-              <SelectTrigger className="w-[120px]">
+              <SelectTrigger className="w-[120px] text-[#595858]">
                 <SelectValue placeholder="Select timeframe" />
               </SelectTrigger>
               <SelectContent>

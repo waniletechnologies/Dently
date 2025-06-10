@@ -38,7 +38,7 @@ export function FinanceFilter({ onAddFinance, onFilterChange }) {
       <div className="flex flex-wrap gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2 bg-white">
+            <Button variant="outline" className="flex items-center gap-2 bg-white text-[#595858]">
               <Plus className="h-4 w-4" />
               {timeFrame}
               <ChevronDown className="h-4 w-4 ml-2" />
@@ -55,7 +55,7 @@ export function FinanceFilter({ onAddFinance, onFilterChange }) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2 bg-white">
+            <Button variant="outline" className="flex items-center gap-2 bg-white text-[#595858]">
               {status}
               <ChevronDown className="h-4 w-4 ml-2" />
             </Button>
@@ -71,7 +71,7 @@ export function FinanceFilter({ onAddFinance, onFilterChange }) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2 bg-white">
+            <Button variant="outline" className="flex items-center gap-2 bg-white text-[#595858]">
               {method}
               <ChevronDown className="h-4 w-4 ml-2" />
             </Button>

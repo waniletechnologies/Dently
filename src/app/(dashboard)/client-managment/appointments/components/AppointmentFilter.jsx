@@ -14,7 +14,7 @@ export function AppointmentsFilters({
     <div className="flex md:items-center gap-4 md:flex-row flex-col px-6 py-4 ">
       <div className="flex items-center gap-4 ">
         <Select value={statusFilter} onValueChange={onStatusChange}>
-          <SelectTrigger className="w-24 bg-white">
+          <SelectTrigger className="w-24 bg-white text-[#595858]">
             <SelectValue placeholder="All" />
           </SelectTrigger>
           <SelectContent>
@@ -26,7 +26,7 @@ export function AppointmentsFilters({
         </Select>
 
         <Select value={statusFilter} onValueChange={onStatusChange}>
-          <SelectTrigger className="w-28 bg-white">
+          <SelectTrigger className="w-28 bg-white text-[#595858]">
             <SelectValue placeholder="Status" />
           </SelectTrigger>
           <SelectContent>
@@ -39,7 +39,7 @@ export function AppointmentsFilters({
       </div>
       <div className="flex items-center gap-4 ">
         <Select value={dateFilter} onValueChange={onDateChange}>
-          <SelectTrigger className="w-24 bg-white ">
+          <SelectTrigger className="w-24 bg-white text-[#595858]">
             <SelectValue placeholder="Date" />
           </SelectTrigger>
           <SelectContent>
@@ -57,7 +57,7 @@ export function AppointmentsFilters({
             className="pl-10 sm:text-sm text-[12px]"
           />
         </div>
-      </div>  
+      </div>
     </div>
   )
 }

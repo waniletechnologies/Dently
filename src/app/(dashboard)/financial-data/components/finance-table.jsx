@@ -33,23 +33,23 @@ export function FinanceTable({ data, onViewTransaction }) {
         <Table>
           <TableHeader>
             <TableRow className="border-b text-[#2A2828] font-medium border-[#e1e1e1]">
-              <TableHead className="  px-6 py-4">Date</TableHead>
-              <TableHead className=" ">Patient</TableHead>
-              <TableHead className=" ">Description</TableHead>
-              <TableHead className=" ">Amount</TableHead>
-              <TableHead className=" ">Method</TableHead>
-              <TableHead className=" ">Status</TableHead>
-              <TableHead className=" w-20">Actions</TableHead>
+              <TableHead className="text-[#2A2828]  px-6 py-4">Date</TableHead>
+              <TableHead className="text-[#2A2828]">Patient</TableHead>
+              <TableHead className="text-[#2A2828]">Description</TableHead>
+              <TableHead className="text-[#2A2828]">Amount</TableHead>
+              <TableHead className="text-[#2A2828]">Method</TableHead>
+              <TableHead className="text-[#2A2828]">Status</TableHead>
+              <TableHead className="text-[#2A2828] w-20">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {data.map((d) => (
-              <TableRow key={d.id} 
-              onClick={() => onViewTransaction(d.id)}
-              className="border-b border-[#f0f0f0] text-[#595858] hover:bg-[#f8f9fa]">
+              <TableRow key={d.id}
+                onClick={() => onViewTransaction(d.id)}
+                className="border-b border-[#f0f0f0] text-[#595858] hover:bg-[#f8f9fa]">
                 <TableCell className="px-6 py-4">
-                  <Button 
-                    variant="link" 
+                  <Button
+                    variant="link"
                     className="text-[#171717] hover:text-primary p-0"
                   >
                     {d.date}
