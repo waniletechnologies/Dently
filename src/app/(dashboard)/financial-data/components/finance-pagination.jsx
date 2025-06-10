@@ -17,11 +17,12 @@ export function FinancePaginantion({ currentPage, totalPages, onPageChange }) {
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href="#" onClick={() => onPageChange(Math.max(1, currentPage - 1))} />
+          <PaginationPrevious href="#" onClick={() => onPageChange(Math.max(1, currentPage - 1))} className="text-[#2A2828]" />
         </PaginationItem>
         {pages.map((page) => (
           <PaginationItem key={page}>
             <PaginationLink
+              className="text-[#2A2828] bg-white"
               href="#"
               isActive={page === currentPage}
               onClick={() => onPageChange(page)}
@@ -32,7 +33,7 @@ export function FinancePaginantion({ currentPage, totalPages, onPageChange }) {
         ))}
         {totalPages > 3 && <PaginationEllipsis />}
         <PaginationItem>
-          <PaginationNext href="#" onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))} />
+          <PaginationNext href="#" onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))} className="text-[#2A2828]" />
         </PaginationItem>
       </PaginationContent>
     </Pagination>

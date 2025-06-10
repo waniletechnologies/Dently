@@ -44,34 +44,34 @@ export function TodaysTasks() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="today" className="w-full">
-        <div className="overflow-x-auto pb-2">
-        <TabsList className="w-full flex gap-2 bg-white border border-[#e1e1e1] rounded-lg  min-w-max">
-            <TabsTrigger
-              value="today"
-              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
-            >
-              Today's Tasks
-            </TabsTrigger>
-            <TabsTrigger
-              value="upcoming"
-              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
-            >
-              Upcoming
-            </TabsTrigger>
-            <TabsTrigger
-              value="overdue"
-              className="flex-1 min-w-[120px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
-            >
-              Overdue
-            </TabsTrigger>
-            <TabsTrigger
-              value="recommendations"
-              className="flex-1 min-w-[150px] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
-            >
-              Pam's recommendations
-            </TabsTrigger>
-          </TabsList>
-        </div>
+          <div className="overflow-x-auto pb-2">
+            <TabsList className="w-full flex gap-2 bg-white border border-[#e1e1e1] rounded-lg  min-w-max">
+              <TabsTrigger
+                value="today"
+                className="flex-1 min-w-[120px] text-[#0F172A] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
+              >
+                Today's Tasks
+              </TabsTrigger>
+              <TabsTrigger
+                value="upcoming"
+                className="flex-1 min-w-[120px] text-[#0F172A] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
+              >
+                Upcoming
+              </TabsTrigger>
+              <TabsTrigger
+                value="overdue"
+                className="flex-1 min-w-[120px] text-[#0F172A] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
+              >
+                Overdue
+              </TabsTrigger>
+              <TabsTrigger
+                value="recommendations"
+                className="flex-1 min-w-[150px] text-[#0F172A] text-xs data-[state=active]:bg-[#F4F4F5] whitespace-nowrap"
+              >
+                Pam's recommendations
+              </TabsTrigger>
+            </TabsList>
+          </div>
           <div className="overflow-x-hidden">
             <TabsContent value="today" className="mt-0">
               {renderTaskList(dashboardData.todaysTasks)}

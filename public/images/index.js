@@ -13,6 +13,7 @@ import callIcon from './callIcon.svg'
 import cancel from './cancel.svg'
 import success from './success.svg'
 import calendar from './calendar.svg'
+import ArrowDown from './ArrowDown.svg'
 
 export {
   auth,
@@ -29,5 +30,6 @@ export {
   callIcon,
   cancel,
   success,
-  calendar
+  calendar,
+  ArrowDown,
 }

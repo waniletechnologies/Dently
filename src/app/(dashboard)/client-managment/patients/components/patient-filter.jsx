@@ -39,7 +39,7 @@ export function PatientsFilter({ onAddPatient, onFilterChange }) {
       <div className="flex flex-wrap gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2 bg-white">
+            <Button variant="outline" className="flex items-center gap-2 bg-white text-[#595858]">
               {timeFrame}
               <ChevronDown className="h-4 w-4 ml-2" />
             </Button>
@@ -55,7 +55,7 @@ export function PatientsFilter({ onAddPatient, onFilterChange }) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2 bg-white">
+            <Button variant="outline" className="flex items-center gap-2 bg-white text-[#595858]">
               {status}
               <ChevronDown className="h-4 w-4 ml-2" />
             </Button>
@@ -71,7 +71,7 @@ export function PatientsFilter({ onAddPatient, onFilterChange }) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2 bg-white">
+            <Button variant="outline" className="flex items-center gap-2 bg-white text-[#595858]">
               {date}
               <ChevronDown className="h-4 w-4 ml-2" />
             </Button>
