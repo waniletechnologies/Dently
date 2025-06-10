@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { connect } from "../../../../../../public/images";
 import Image from "next/image";
 import { HiCheckCircle } from "react-icons/hi";

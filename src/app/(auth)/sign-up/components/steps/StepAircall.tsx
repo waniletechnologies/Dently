@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { MdPhone, MdCheckCircle, MdCheck } from "react-icons/md";
 
 export function StepAircall({ onNext }: { onNext: () => void }) {

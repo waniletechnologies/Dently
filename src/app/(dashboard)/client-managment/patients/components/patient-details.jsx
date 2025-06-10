@@ -33,7 +33,7 @@ export function PatientDetails({ patientId }) {
 
       {/* Patient Info Header */}
       <div className="bg-white rounded-lg border border-[#e1e1e1] p-6">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex sm:items-center justify-between mb-4 flex-col sm:flex-row gap-4">
           <div>
             <h1 className="text-xl font-semibold text-[#171717]">Patient Details</h1>
             <p className="text-sm text-[#848484]">

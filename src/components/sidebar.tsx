@@ -37,11 +37,11 @@ const SidebarContent = () => {
       {/* Navigation */}
       <nav className="flex-1 px-4 overflow-y-auto overflow-x-hidden">
         <div className="space-y-1">
-          {dashboardData.navigationItems.map((item, index) => {
+          {dashboardData.navigationItems.map((item) => {
             const Icon = iconMap[item.icon as keyof typeof iconMap]
             return (
               <NavItem
-                key={index}
+                key={item.title}
                 title={item.title}
                 icon={Icon}
                 path={item.path}

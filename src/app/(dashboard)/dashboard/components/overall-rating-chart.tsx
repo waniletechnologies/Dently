@@ -1,9 +1,9 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { XAxis, YAxis, ResponsiveContainer, AreaChart, Area, CartesianGrid, Tooltip, TooltipProps } from "recharts"
+import { XAxis, YAxis, ResponsiveContainer, AreaChart, Area, CartesianGrid, Tooltip, type TooltipProps } from "recharts"
 import { dashboardData } from "@/lib/db"
-import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
+import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent"
 
 const CustomTooltip = ({ 
   active, 

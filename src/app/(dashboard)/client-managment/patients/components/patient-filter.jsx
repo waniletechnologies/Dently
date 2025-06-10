@@ -96,7 +96,7 @@ export function PatientsFilter({ onAddPatient, onFilterChange }) {
         </div>
       </div>
 
-      <Button className="bg-[#ffa048] hover:bg-[#f68a15] text-white flex items-center gap-2" onClick={onAddPatient}>
+      <Button className="bg-primary hover:bg-primary/80 w-fit text-white flex items-center gap-2" onClick={onAddPatient}>
         <Plus className="h-4 w-4" />
         Add Patient
       </Button>
