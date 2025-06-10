@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import Image from "next/image";
 import { ArrowDown } from "../../../../../../public/images";
 import SalesRadarChart from "./SalesRadarChart";
 const options = ["Last 30 Days", "Last 7 Days"];

@@ -4,7 +4,7 @@ import { Progress } from "@/components/ui/progress";
 
 interface TeamMember {
   name: string;
-  required: number;
+  requiredCourses: number;
   completed: number;
   progress: number;
   priceObjections: number;
@@ -66,7 +66,7 @@ const SidePanel: FC<SidePanelProps> = ({ selectedRow, onClose, styles }) => {
             Assigned Courses
           </p>
           <p className="font-medium text-[12px] text-[#595858]">
-            {selectedRow.required}
+            {selectedRow.requiredCourses}
           </p>
         </div>
         <div className="border-r border-r-[#00000014] px-4 md:px-12">

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const Learnings = [
@@ -8,9 +9,23 @@ const Learnings = [
     description:
       "Learn ethical, patient-centered sales techniques to confidently present treatment plans.",
   },
+  {
+    Heading: "Selling Aligners Via Online Consultations",
+    time: "45 min",
+    modules: "4 modules",
+    description:
+      "Master virtual consultation strategies to effectively educate and convert patients into clients remotely",
+  },
+  {
+    Heading: "Front of House Excellence",
+    time: "45 min",
+    modules: "7 modules",
+    description:
+      "Enhance patient experience with standout communication, scheduling, and front-desk service.",
+  },
 ];
 
-const ClockIcon = () => {
+export const ClockIcon = () => {
   return (
     <svg width="16" height="15" viewBox="0 0 16 15" fill="none">
       <path
@@ -23,7 +38,7 @@ const ClockIcon = () => {
     </svg>
   );
 };
-const BookIcon = () => {
+export const BookIcon = () => {
   return (
     <svg width="16" height="15" viewBox="0 0 16 15" fill="none">
       <path
@@ -42,10 +57,13 @@ const RecommendedLearning = () => {
       <p className="text-[#2A2828] mb-[24px] text-[16px] font-medium">
         Recommended Learning
       </p>
-      <div>
+      <div className="flex flex-row flex-wrap gap-[24px]">
         {Learnings.map((learning, index) => {
           return (
-            <div className="bg-white w-[33%] rounded-[10px] p-6" key={index}>
+            <div
+              className="bg-white flex-1 flex flex-col rounded-[10px] p-6"
+              key={index}
+            >
               <p className="text-[#2A2828] text-[14px] font-medium">
                 {learning.Heading}
               </p>
@@ -62,8 +80,27 @@ const RecommendedLearning = () => {
                     {learning.modules}
                   </p>
                 </div>
-                <p>{learning.description}</p>
               </div>
+              <p className="text-[#2A2828] text-[12px] font-normal mt-3">
+                {learning.description}
+              </p>
+              <div className="flex gap-2.5 mt-[18px] items-center">
+                <Button
+                  variant="ghost"
+                  className="bg-[#F1F5F9] cursor-pointer text-[#2A2828] text-[12px] font-normal px-3 py-[5px] rounded-[6px]"
+                >
+                  Objections
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="bg-[#F1F5F9] cursor-pointer text-[#2A2828] text-[12px] font-normal px-3 py-[5px] rounded-[6px]"
+                >
+                  Pricing
+                </Button>
+              </div>
+              <Button className="mt-[23px] cursor-pointer text-[14px] font-normal">
+                Assign
+              </Button>
             </div>
           );
         })}
