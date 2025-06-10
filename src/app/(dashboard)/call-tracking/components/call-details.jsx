@@ -6,10 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { ArrowLeft, TrendingUp, Calendar, User, MessageSquare, Phone, Edit } from "lucide-react"
+import { ArrowLeft, TrendingUp, Calendar, User, MessageSquare, Phone, Edit, Clock } from "lucide-react"
 import { callTrackingData } from "@/lib/db"
 import Link from "next/link"
-
 
 export function CallDetail({ callId }) {
   const callDetail = callTrackingData.callDetails[callId]
@@ -18,27 +17,30 @@ export function CallDetail({ callId }) {
     return <div>Call not found</div>
   }
 
-  const getStatusBadge = (status) => {
+  const getStatusBadge = (status, type) => {
     const baseClasses = "text-xs font-medium"
 
-    if (type === "booking") {
-      switch (status) {
-        case "Booked":
-          return <Badge className={`${baseClasses} bg-[#effaf6] text-[#114439] hover:bg-[#effaf6]`}>✓ Booked</Badge>
-        case "Not Booked":
-          return <Badge className={`${baseClasses} bg-[#fef2f2] text-[#dc2626] hover:bg-[#fef2f2]`}>✗ Not Booked</Badge>
-        default:
-          return <Badge className={`${baseClasses} bg-[#f0f0f0] text-[#848484] hover:bg-[#f0f0f0]`}>{status}</Badge>
-      }
-    } else {
-      switch (status) {
-        case "Done":
-          return <Badge className={`${baseClasses} bg-[#effaf6] text-[#114439] hover:bg-[#effaf6]`}>✓ Done</Badge>
-        case "Pending":
-          return <Badge className={`${baseClasses} bg-[#fef3cd] text-[#92400e] hover:bg-[#fef3cd]`}>⚠ Pending</Badge>
-        default:
-          return <Badge className={`${baseClasses} bg-[#f0f0f0] text-[#848484] hover:bg-[#f0f0f0]`}>{status}</Badge>
-      }
+    switch (type) {
+      case "booking":
+        switch (status) {
+          case "Booked":
+            return <Badge className={`${baseClasses} bg-[#effaf6] text-[#114439] hover:bg-[#effaf6]`}>✓ Booked</Badge>
+          case "Not Booked":
+            return <Badge className={`${baseClasses} bg-[#fef2f2] text-[#dc2626] hover:bg-[#fef2f2]`}>✗ Not Booked</Badge>
+          default:
+            return <Badge className={`${baseClasses} bg-[#f0f0f0] text-[#848484] hover:bg-[#f0f0f0]`}>{status}</Badge>
+        }
+      case "followup":
+        switch (status) {
+          case "Done":
+            return <Badge className={`${baseClasses} bg-[#effaf6] text-[#114439] hover:bg-[#effaf6]`}>✓ Done</Badge>
+          case "Pending":
+            return <Badge className={`${baseClasses} bg-[#fef3cd] text-[#92400e] hover:bg-[#fef3cd]`}><Clock className="h-3 w-3 mr-1" /> Pending</Badge>
+          default:
+            return <Badge className={`${baseClasses} bg-[#f0f0f0] text-[#848484] hover:bg-[#f0f0f0]`}>{status}</Badge>
+        }
+      default:
+        return <Badge className={`${baseClasses} bg-[#f0f0f0] text-[#848484] hover:bg-[#f0f0f0]`}>{status}</Badge>
     }
   }
 
@@ -118,8 +120,8 @@ export function CallDetail({ callId }) {
                 <p className="text-[#848484] mb-4">No comments Yet</p>
               ) : (
                 <div className="space-y-4 mb-4">
-                  {callDetail.comments.map((comment, index) => (
-                    <div key={index} className="border-l-4 border-[#ffa048] pl-4">
+                  {callDetail.comments.map((comment) => (
+                    <div key={`${comment.author}-${comment.timestamp}`} className="border-l-4 border-[#ffa048] pl-4">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="font-medium text-[#171717]">{comment.author}</span>
                         <span className="text-sm text-[#848484]">{comment.timestamp}</span>
@@ -154,12 +156,12 @@ export function CallDetail({ callId }) {
                     <TableHead className="text-[#848484] font-medium">Booking</TableHead>
                     <TableHead className="text-[#848484] font-medium">Follow-up</TableHead>
                     <TableHead className="text-[#848484] font-medium">Staff Member</TableHead>
-                    <TableHead className="text-[#848484] font-medium w-20"></TableHead>
+                    <TableHead className="text-[#848484] font-medium w-20" />
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {callDetail.callsHistory.map((call, index) => (
-                    <TableRow key={index} className="border-b border-[#f0f0f0]">
+                  {callDetail.callsHistory.map((call) => (
+                    <TableRow key={`${call.dateTime}-${call.number}`} className="border-b border-[#f0f0f0]">
                       <TableCell className="px-6 py-4 text-[#171717]">{call.callerName}</TableCell>
                       <TableCell className="text-[#171717]">{call.number}</TableCell>
                       <TableCell className="text-[#171717]">{call.dateTime}</TableCell>
@@ -206,7 +208,7 @@ export function CallDetail({ callId }) {
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
-                <label className="text-sm font-medium text-[#171717] mb-2 block">Booking Status</label>
+                <div className="text-sm font-medium text-[#171717] mb-2">Booking Status</div>
                 <div className="grid grid-cols-2 gap-2">
                   <Button
                     variant={callDetail.bookingStatus === "Booked" ? "default" : "outline"}
@@ -232,7 +234,7 @@ export function CallDetail({ callId }) {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-[#171717] mb-2 block">Follow-up Status</label>
+                <div className="text-sm font-medium text-[#171717] mb-2">Follow-up Status</div>
                 <div className="grid grid-cols-2 gap-2">
                   <Button
                     variant={callDetail.followUpStatus === "Done" ? "default" : "outline"}
@@ -258,7 +260,7 @@ export function CallDetail({ callId }) {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-[#171717] mb-2 block">Follow-up Notes</label>
+                <div className="text-sm font-medium text-[#171717] mb-2">Follow-up Notes</div>
                 <Textarea
                   placeholder="Enter follow-up notes or action items"
                   defaultValue={callDetail.followUpNotes}

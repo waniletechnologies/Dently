@@ -70,8 +70,8 @@ export function Header() {
 
   return (
     <header className="bg-white border-b border-[#e1e1e1] text-[var(--black-color)] px-4 sm:px-6 py-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="flex sm:items-center items-start justify-between">
+        <div className="flex sm:items-center gap-2">
           <Button 
             variant="ghost" 
             size="icon" 
@@ -81,12 +81,12 @@ export function Header() {
             <FiSidebar className="h-5 w-5" />
           </Button>
           <span className="h-5 w-[1px] bg-[#e1e1e1] md:hidden"/>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-2 text-sm text-[#848484]">
+          <div className="flex sm:items-center gap-2">
+            <div className="flex items-center gap-2 text-sm text-[#848484] flex-wrap">
               {breadcrumbs.map((breadcrumb, index) => {
                 const Icon = breadcrumb.icon ? iconMap[breadcrumb.icon] : null
                 return (
-                  <div key={index} className="flex items-center gap-2">
+                  <div key={breadcrumb.title} className="flex items-center gap-2">
                     {Icon && <Icon className="h-4 w-4 text-[#848484]" />}
                     <span>{breadcrumb.title}</span>
                     {index < breadcrumbs.length - 1 && (

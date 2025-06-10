@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState } from "react";
 import { connect } from "../../../../../../public/images";
 import Image from "next/image";

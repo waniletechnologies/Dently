@@ -4,8 +4,8 @@
 import type React from "react"
 import { forwardRef, useState } from "react"
 import { cn } from "@/lib/utils"
-import { UseFormRegister } from "react-hook-form"
-import { FieldValues } from "react-hook-form"
+import type { UseFormRegister } from "react-hook-form"
+import type { FieldValues } from "react-hook-form"
 import { FiEye, FiEyeOff, FiLock, FiMail, FiUser } from "react-icons/fi"
 
 export interface InputWithIconProps<TFormValues extends FieldValues> extends React.InputHTMLAttributes<HTMLInputElement> {

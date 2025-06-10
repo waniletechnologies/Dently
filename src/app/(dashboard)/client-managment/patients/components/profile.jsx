@@ -36,14 +36,12 @@ const Profile = ({ patient }) => {
             </div>
 
             {/* View Financial Data */}
-            <div className="flex justify-between bg-[#f4f5f7] rounded-md p-2 items-center">
+            <div className="flex justify-between items-center  bg-[#f4f5f7] rounded-md p-2  gap-4">
               <div className=" flex items-center gap-3 justify-center">
                 <FileText className="w-5 h-5 text-primary" />
-                <p className="text-gray-900 font-medium">View Financial Data</p>
+                <p className="text-gray-900 sm:text-base text-sm font-medium">View Financial Data</p>
               </div>
-              <div className="">
-              </div>
-              <Button className="bg-primary text-white px-6">View</Button>
+              <Button className="bg-primary text-white sm:px-6 w-fit">View</Button>
             </div>
           </div>
         </div>
@@ -62,7 +60,7 @@ const Profile = ({ patient }) => {
       {/* Right Column */}
       <div className="md:w-[50%]">
             <div className='flex flex-col gap-4 bg-[#f4f5f7] rounded-md p-4 items-center justify-center'>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Enrolled in Dentist Gold Card?</label>
+              <div className="block text-sm font-medium text-gray-700 mb-2">Enrolled in Dentist Gold Card?</div>
               <Select defaultValue="yes">
                 <SelectTrigger className="w-[200px]">
                   <SelectValue />

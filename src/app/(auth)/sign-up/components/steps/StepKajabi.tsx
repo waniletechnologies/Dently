@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState } from "react";
 import { HiCheckCircle } from "react-icons/hi";
 import Image from "next/image";

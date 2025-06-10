@@ -65,7 +65,7 @@ export function SocialMediaAnalytics() {
         <div className="flex items-center justify-between sm:flex-row flex-col gap-3">
           <div className="h-50 w-50 relative">
             {/* Background circle */}
-            <div className="absolute inset-0 rounded-full bg-primary/10 "></div>
+            <div className="absolute inset-0 rounded-full bg-primary/10 "/>
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -81,7 +81,7 @@ export function SocialMediaAnalytics() {
                 >
                   {dashboardData.socialMediaData.map((entry, index) => (
                     <Cell 
-                      key={`cell-${index}`} 
+                      key={entry.name} 
                       fill={entry.color}
                       className={activeIndex === index ? "stroke-2" : ""}
                     />
@@ -93,12 +93,12 @@ export function SocialMediaAnalytics() {
           <div className="space-y-6">
             {dashboardData.socialMediaData.map((item, index) => (
               <div 
-                key={index} 
+                key={item.name} 
                 className="cursor-pointer" 
                 onMouseEnter={() => setActiveIndex(index)}
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }}></div>
+                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }}/>
                   <span className="text-sm text-[#848484]">{item.name}</span>
                 </div>
                 <p className="text-lg font-semibold text-[#171717]">{item.count}</p>

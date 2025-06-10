@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState } from "react";
 import { MdPhone, MdCheckCircle, MdCheck } from "react-icons/md";
 
