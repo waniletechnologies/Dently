@@ -6,7 +6,7 @@ export default function GoldCardMetrics(){
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {GoldCardData.metrics.map((metric) => {
             return (
-              <Card key={metric.title} className="bg-white p-0 border-[#e1e1e1]">
+              <Card key={metric.title} className="bg-white shadow-none border-none p-0 border-[#e1e1e1]">
                 <CardContent className="p-5">
                   <div className="flex w-full gap-[12px] flex-col">
                     <div className="flex items-center w-full">

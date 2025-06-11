@@ -3,28 +3,40 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxi
 import type { TooltipProps } from "recharts";
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 
+const commissionData = [
+  { month: "Jan", day: 15, value: 20000 },
+  { month: "Feb", day: 15, value: 30000 },
+  { month: "Mar", day: 15, value: 60000 },
+  { month: "Apr", day: 15, value: 40000 },
+  { month: "May", day: 15, value: 70000 },
+  { month: "Jun", day: 15, value: 35000 },
+  { month: "Jul", day: 15, value: 60000 },
+  { month: "Aug", day: 15, value: 40000 },
+  { month: "Sep", day: 15, value: 40000 },
+];
 
 const CustomTooltip = ({
   active,
   payload,
 }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
-    const { month, value } = payload[0].payload as { month: string; value: number };
+    const { month, day, value } = payload[0].payload as { month: string; day: number; value: number };
     return (
       <div
         style={{
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "#fff",
           color: "#1F1F1F",
-          padding: "10px 16px",
-          borderRadius: "8px",
-          fontSize: "15px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-          minWidth: "140px",
+          padding: "16px 24px",
+          borderRadius: "12px",
+          fontSize: "16px",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+          minWidth: "160px",
+          textAlign: "left",
         }}
       >
-        <div style={{ fontWeight: 600, marginBottom: 4 }}>{month}</div>
-        <div style={{ color: "#EE861E", fontWeight: 500 }}>
-          Commission: £{value.toLocaleString()}
+        <div style={{ fontWeight: 600, marginBottom: 4 }}>{month} {day}</div>
+        <div style={{ color: "#EE861E", fontWeight: 500, fontSize: 17 }}>
+          Commission : £{(value / 1000).toLocaleString()}k
         </div>
       </div>
     );
@@ -32,77 +44,55 @@ const CustomTooltip = ({
   return null;
 };
 
-const commissionData = [
-  { month: "Jan", value: 20 },
-  { month: "Feb", value: 20 },
-  { month: "Mar", value: 45 },
-  { month: "Apr", value: 25 },
-  { month: "May", value: 35 },
-  { month: "Jun", value: 39 },
-  { month: "Jul", value: 40 },
-  { month: "Aug", value: 60 },
-  { month: "Sep", value: 35 },
-  { month: "Oct", value: 45 },
-  { month: "Nov", value: 40 },
-  { month: "Dec", value: 35 },
-];
-
-export default function CommissionDistribution(){
-    return(
-        <Card className="bg-white mt-[36px] border-none shadow-none">
-              <CardHeader>
-                <CardTitle className="text-[#1F1F1F] text-[16px] font-semibold">
-                  Commission Distribution
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-60 w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      width={100}
-                      height={100}
-                      data={commissionData}
-                      margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
-                    >
-                      <defs>
-                        <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#F68A15" stopOpacity={0.3} />
-                          <stop offset="95%" stopColor="#F68A15" stopOpacity={0} />
-                        </linearGradient>
-                      </defs>
-                      <CartesianGrid
-                        strokeDasharray="3 3"
-                        horizontal={true}
-                        vertical={false}
-                        stroke="#e5e5e5"
-                      />
-                      <XAxis
-                        dataKey="month"
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fontSize: 11, fill: "#BCBCBC" }}
-                      />
-                      <YAxis
-                        scale="linear"
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fontSize: 10, fill: "#848484" }}
-                        domain={[0, 80]}
-                        ticks={[0, 20, 40, 60, 80]}
-                        interval={0}
-                      />
-                      <Tooltip content={<CustomTooltip />} cursor={false} />
-                      <Bar
-                        type="linear"
-                        dataKey="value"
-                        fill="#F68A15"
-                        radius={[4, 4, 0, 0]} 
-                        barSize={20}
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </CardContent>
-            </Card>
-    )
+export default function CommissionDistribution() {
+  return (
+      <Card className="rounded-2xl mt-[36px] border-none shadow-none bg-white">
+        <CardHeader>
+          <CardTitle className="text-[#1F1F1F] text-[20px] font-geist font-semibold">
+            Commission Distribution
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="h-60 px-0 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={commissionData}
+                margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
+              >
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  horizontal={true}
+                  vertical={false}
+                  stroke="#e5e5e5"
+                />
+                <XAxis
+                  dataKey="month"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 13, fill: "#BCBCBC" }}
+                />
+                <YAxis
+                  scale="linear"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 12, fill: "#848484" }}
+                  domain={[0, 80000]}
+                  ticks={[0, 20000, 40000, 60000, 80000]}
+                  interval={0}
+                  tickFormatter={v => v === 0 ? '0' : `${v / 1000}k`}
+                />
+                <Tooltip content={<CustomTooltip />} cursor={false} />
+                <Bar
+                  type="linear"
+                  dataKey="value"
+                  fill="#F68A1E"
+                  radius={[10, 10, 0, 0]}
+                  barSize={28}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </CardContent>
+      </Card>
+  );
 }

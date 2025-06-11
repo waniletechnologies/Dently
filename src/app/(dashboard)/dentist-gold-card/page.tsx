@@ -9,6 +9,7 @@ import ReferralPerformance from "./components/referral-performance";
 import CommissionDistribution from "./components/commission-distribution";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReferralsManagement from "./components/referrals-management";
+import CommissionPayment from "./components/commission-payment";
 
 export default function DentistGoldCardPage() {
     const [selectedStatus, setSelectedStatus] = useState("All");
@@ -46,12 +47,15 @@ export default function DentistGoldCardPage() {
     </div>
 
     <Tabs defaultValue="referrals" className="mt-8">
-        <TabsList className="mb-4 border-2 border-dotted">
+        <TabsList className="mb-4 border-2 bg-white border-[#E4E4E7] rounded-lg p-1">
           <TabsTrigger className="text-[#2A2828]" value="referrals">Referrals Management</TabsTrigger>
           <TabsTrigger value="commission">Commission Payments</TabsTrigger>
         </TabsList>
         <TabsContent value="referrals">
             <ReferralsManagement />
+        </TabsContent>
+        <TabsContent value="commission">
+            <CommissionPayment />
         </TabsContent>
     </Tabs>
     </main>
