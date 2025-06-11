@@ -16,6 +16,7 @@ import calendar from './calendar.svg'
 import ArrowDown from './ArrowDown.svg'
 import instagramIcon from './instagram.svg'
 import dental from './dental.svg'
+import template from './template.png'
 export {
   auth,
   logo,
@@ -32,7 +33,8 @@ export {
   cancel,
   success,
   calendar,
-  ArrowDown,,
+  ArrowDown,
   instagramIcon,
-  dental
+  dental,
+  template
 }
