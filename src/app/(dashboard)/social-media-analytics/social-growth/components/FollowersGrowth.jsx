@@ -3,15 +3,15 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tool
 const FollowersGrowth = ({ data }) => {
   return (
     <div className="bg-white rounded-lg p-6 space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex sm:items-center items-start sm:flex-row flex-col justify-between">
         <h2 className="text-lg font-medium">Followers Growth</h2>
         <div className="flex items-center gap-4 text-sm">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500" />
+            <div className="w-3 h-3 rounded-full bg-[#DC2626]" />
             <span>Instagram</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-blue-500" />
+            <div className="w-3 h-3 rounded-full bg-[#1D90FF]" />
             <span>Facebook</span>
           </div>
         </div>
@@ -40,8 +40,8 @@ const FollowersGrowth = ({ data }) => {
                   return (
                     <div className="bg-white p-2 border rounded shadow-sm">
                       <p className="text-sm">Apr {payload[0].payload.day}</p>
-                      <p className="text-sm text-red-500">Instagram: {payload[0].value}</p>
-                      <p className="text-sm text-blue-500">Facebook: {payload[1].value}</p>
+                      <p className="text-sm text-[#DC2626]">Instagram: {payload[0].value}</p>
+                      <p className="text-sm text-[#1D90FF]">Facebook: {payload[1].value}</p>
                     </div>
                   )
                 }
@@ -51,7 +51,7 @@ const FollowersGrowth = ({ data }) => {
             <Line
               type="monotone"
               dataKey="instagram"
-              stroke="#ef4444"
+              stroke="#DC2626"
               strokeWidth={2}
               dot={false}
               activeDot={{ r: 6 }}
@@ -59,7 +59,7 @@ const FollowersGrowth = ({ data }) => {
             <Line
               type="monotone"
               dataKey="facebook"
-              stroke="#3b82f6"
+              stroke="#1D90FF"
               strokeWidth={2}
               dot={false}
               activeDot={{ r: 6 }}

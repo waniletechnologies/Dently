@@ -210,11 +210,23 @@ export const dashboardData = {
         submenuItems: [
           { title: "Overview", path: "/social-media-analytics/overview" },
           { title: "Ad Performance", path: "/social-media-analytics/ad-performance" },
-          { title: "Social Growth", path: "#" }, //social-media-analytics/social-growth
-          { title: "Recommendations", path: "#" } //social-media-analytics/recommendations
+          { title: "Social Growth", path: "/social-media-analytics/social-growth" },
+          { title: "Pam's Insights", path: "/social-media-analytics/pam-insights" } 
         ]
       },
-      { title: "Coaching", icon: "TvMinimalPlay", active: false, path: "/coaching" },
+      {
+        title: "Coaching",
+        icon: "TvMinimalPlay",
+        active: false,
+        path: "/coaching",
+        hasSubmenu: true,
+        submenuItems: [
+          { title: "Overview", path: "/coaching/overview" },
+          { title: "Pam's Insights", path: "/coaching/insights" },
+          { title: "Objection Tracker", path: "/coaching/objection-tracker" },
+          { title: "Scripts", path: "/coaching/scripts" },
+        ],
+      },
       { title: "Settings", icon: "Settings", active: false, path: "/settings" },
     ],
   }
@@ -1238,15 +1250,15 @@ export const financialData = {
     },
   ]
  export  const followersData = [
-    { date: "Apr 1", instagram: 7500, facebook: 2800 },
-    { date: "Apr 4", instagram: 7800, facebook: 2900 },
-    { date: "Apr 7", instagram: 8200, facebook: 3100 },
-    { date: "Apr 10", instagram: 8600, facebook: 3200 },
-    { date: "Apr 13", instagram: 9100, facebook: 3400 },
+    { date: "Apr 1", instagram: 5500, facebook: 2800 },
+    { date: "Apr 4", instagram: 8800, facebook: 2900 },
+    { date: "Apr 7", instagram: 4200, facebook: 3100 },
+    { date: "Apr 10", instagram: 9600, facebook: 3200 },
+    { date: "Apr 13", instagram: 5100, facebook: 3400 },
     { date: "Apr 16", instagram: 8217, facebook: 3300 },
-    { date: "Apr 19", instagram: 8800, facebook: 3500 },
+    { date: "Apr 19", instagram: 3800, facebook: 3500 },
     { date: "Apr 22", instagram: 9200, facebook: 3600 },
-    { date: "Apr 25", instagram: 9500, facebook: 3700 },
+    { date: "Apr 25", instagram: 3500, facebook: 3700 },
   ]
   
  export const engagementData = [
@@ -1258,3 +1270,219 @@ export const financialData = {
     { day: "Sat", likes: 380, comments: 220, shares: 110 },
     { day: "Sun", likes: 580, comments: 340, shares: 180 },
   ]
+
+  export const recommendationsData = {
+    allRecommendations: [
+      {
+        id: 1,
+        title: "Increase budget on New Patient Promo",
+        description:
+          "This campaign has shown high ROAS (4.2x) over the last month. Increasing budget by 20% could yield approximately 15-20 more conversions.",
+        impact: "High Impact",
+        category: "budget",
+        metrics: {
+          roas: "4.2x",
+          convRate: "6.8%",
+          ctr: "5.4%",
+        },
+      },
+      {
+        id: 2,
+        title: "Pause underperforming Teeth Cleaning ad",
+        description:
+          "This ad has a CTR of only 1.2% and a conversion rate of 0.8%, well below the account average. Consider pausing or refreshing creative.",
+        impact: "Medium Impact",
+        category: "budget",
+        metrics: {
+          roas: "4.2x",
+          convRate: "0.8%",
+          ctr: "5.4%",
+        },
+      },
+      {
+        id: 3,
+        title: "Add new audience segment to Family Dentistry campaign",
+        description:
+          "Based on the success with parents aged 35-45, we recommend expanding to the grandparents demographic (age 60-75) who often influence family dental care decisions.",
+        impact: "Medium Impact",
+        category: "targeting",
+        metrics: {
+          potentialReach: "+18k",
+          estCtr: "4.2%",
+        },
+      },
+      {
+        id: 4,
+        title: "Use video format for Invisalign ads",
+        description:
+          "Video ads for similar services have shown 32% higher engagement rates. We recommend creating a short 15-30 second video highlighting the benefits.",
+        impact: "High Impact",
+        category: "creative",
+        metrics: {
+          estEngagement: "+32%",
+          estCtr: "+18%",
+        },
+      },
+      {
+        id: 5,
+        title: "Implement retargeting for site visitors",
+        description:
+          "Only 28% of your ad budget is allocated to retargeting. Increasing to 40% could improve overall conversion rates, as visitors who have shown interest are more likely to convert.",
+        impact: "High Impact",
+        category: "targeting",
+        metrics: {
+          potentialReach: "+18k",
+          estCtr: "4.2%",
+        },
+      },
+    ],
+  
+    budgetRecommendations: [
+      {
+        id: 1,
+        title: "Increase budget on New Patient Promo",
+        description:
+          "This campaign has shown high ROAS (4.2x) over the last month. Increasing budget by 20% could yield approximately 15-20 more conversions.",
+        impact: "High Impact",
+        metrics: {
+          roas: "4.2x",
+          convRate: "6.8%",
+          ctr: "5.4%",
+        },
+      },
+      {
+        id: 2,
+        title: "Pause underperforming Teeth Cleaning ad",
+        description:
+          "This ad has a CTR of only 1.2% and a conversion rate of 0.8%, well below the account average. Consider pausing or refreshing creative.",
+        impact: "Medium Impact",
+        metrics: {
+          roas: "4.2x",
+          convRate: "0.8%",
+          ctr: "5.4%",
+        },
+      },
+      {
+        id: 6,
+        title: "Reallocate budget from Emergency Care campaign",
+        description:
+          "This campaign has the lowest ROAS (2.1x) in your account. Consider reducing budget by 30% and reallocating to higher-performing campaigns.",
+        impact: "Medium Impact",
+        metrics: {
+          roas: "2.1x",
+          convRate: "3.2%",
+          ctr: "4.1%",
+        },
+      },
+    ],
+  
+    creativeRecommendations: [
+      {
+        id: 4,
+        title: "Use video format for Invisalign ads",
+        description:
+          "Video ads for similar services have shown 32% higher engagement rates. We recommend creating a short 15-30 second video highlighting the benefits.",
+        impact: "High Impact",
+        metrics: {
+          estEngagement: "+32%",
+          estCtr: "+18%",
+        },
+        suggestedCaption:
+          "Transform your smile with our professional teeth whitening service! ✨ Book your appointment today and get 20% off your first visit. #DentalCare #TeethWhitening #NewSmile",
+        suggestedHashtags: ["#DentalCare", "#TeethWhitening", "#NewSmile", "#HealthyTeeth"],
+      },
+      {
+        id: 7,
+        title: "Update Family Dentistry ad creative",
+        description:
+          "Current creative has been running for 3 months. Refreshing with new imagery and copy could improve performance by 15-25%.",
+        impact: "Medium Impact",
+        metrics: {
+          estEngagement: "+20%",
+          estCtr: "+15%",
+        },
+        suggestedCaption:
+          "Complete family dental care under one roof! From kids' cleanings to adult cosmetic procedures. Schedule your family's appointment today! 👨‍👩‍👧‍👦 #FamilyDentistry #DentalCare",
+        suggestedHashtags: ["#FamilyDentistry", "#DentalCare", "#KidsTeeth", "#FamilyHealth"],
+      },
+      {
+        id: 8,
+        title: "Create carousel ad for dental services",
+        description:
+          "Showcase multiple services in one ad. Carousel ads typically see 30-50% higher CTR for service-based businesses.",
+        impact: "High Impact",
+        metrics: {
+          estEngagement: "+45%",
+          estCtr: "+30%",
+        },
+        suggestedCaption:
+          "Discover our comprehensive dental services! Swipe to see how we can help you achieve your perfect smile. Book a consultation today! 😊 #ComprehensiveCare #DentalServices",
+        suggestedHashtags: ["#ComprehensiveCare", "#DentalServices", "#PerfectSmile", "#DentalHealth"],
+      },
+    ],
+  
+    targetingRecommendations: [
+      {
+        id: 3,
+        title: "Add new audience segment to Family Dentistry campaign",
+        description:
+          "Based on the success with parents aged 35-45, we recommend expanding to the grandparents demographic (age 60-75) who often influence family dental care decisions.",
+        impact: "Medium Impact",
+        metrics: {
+          potentialReach: "+18k",
+          estCtr: "4.2%",
+        },
+      },
+      {
+        id: 5,
+        title: "Implement retargeting for site visitors",
+        description:
+          "Only 28% of your ad budget is allocated to retargeting. Increasing to 40% could improve overall conversion rates, as visitors who have shown interest are more likely to convert.",
+        impact: "High Impact",
+        metrics: {
+          potentialReach: "+18k",
+          estCtr: "4.2%",
+        },
+      },
+      {
+        id: 9,
+        title: "Target dental anxiety keywords",
+        description:
+          "Create a specific audience for people searching for 'gentle dentist' or 'dental anxiety'. This underserved segment could yield high-quality leads.",
+        impact: "High Impact",
+        metrics: {
+          potentialReach: "+12k",
+          estCtr: "5.8%",
+        },
+      },
+      {
+        id: 10,
+        title: "Expand geographic targeting",
+        description:
+          "Your current 15-mile radius could be expanded to 25 miles for cosmetic procedures, as people travel further for specialized treatments.",
+        impact: "Medium Impact",
+        metrics: {
+          potentialReach: "+25k",
+          estCtr: "3.9%",
+        },
+      },
+    ],
+  }
+  
+  export const impactColors = {
+    "High Impact": {
+      bg: "bg-red-100",
+      text: "text-red-800",
+      border: "border-red-200",
+    },
+    "Medium Impact": {
+      bg: "bg-yellow-100",
+      text: "text-yellow-800",
+      border: "border-yellow-200",
+    },
+    "Low Impact": {
+      bg: "bg-green-100",
+      text: "text-green-800",
+      border: "border-green-200",
+    },
+  }

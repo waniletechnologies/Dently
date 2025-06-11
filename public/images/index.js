@@ -12,7 +12,8 @@ import callIcon from './callIcon.svg'
 import cancel from './cancel.svg'
 import success from './success.svg'
 import calendar from './calendar.svg'
-
+import instagramIcon from './instagram.svg'
+import dental from './dental.svg'
 export {
   auth,
   logo,
@@ -27,5 +28,7 @@ export {
   callIcon,
   cancel,
   success,
-  calendar
+  calendar,
+  instagramIcon,
+  dental
 }
