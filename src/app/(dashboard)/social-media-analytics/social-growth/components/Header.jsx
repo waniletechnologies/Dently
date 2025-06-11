@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button"
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between">
-      <h1 className="text-2xl font-semibold">Social Growth</h1>
-      <div className="flex items-center gap-2">
+    <div className="flex sm:items-center justify-between sm:flex-row flex-col gap-2">
+      <h1 className="sm:text-2xl text-xl font-semibold">Social Growth</h1>
+      <div className="flex sm:items-center items-start sm:flex-row flex-col gap-[-10px]">
         <Button variant="ghost" className="text-gray-600 hover:text-gray-900">Facebook</Button>
         <Button variant="ghost" className="text-gray-600 hover:text-gray-900">Instagram</Button>
       </div>
