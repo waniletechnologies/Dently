@@ -1357,3 +1357,43 @@ export const engagementData = [
       roas: "2.3x",
     },
   ]
+
+  export const GoldCardData = {
+    filterOptions: {
+      timeFrames: [
+        { value: "all", label: "All" },
+        { value: "last-30-days", label: "Last 30 Days" },
+        { value: "last-3-days", label: "Last 3 Days" },
+        { value: "last-6-months", label: "Last 6 Months" },
+        { value: "last-year", label: "Last Year" },
+        { value: "custom-date", label: "Custom Date" },
+      ],
+      statuses: [
+        { value: "all", label: "All" },
+        { value: "active", label: "Active" },
+        { value: "inactive", label: "Inactive" },
+      ],
+    },
+    metrics: [
+    {
+      title: "Total Patients Enrolled",
+      value: 248,
+    },
+    {
+      title: "Active Referrals",
+      value: 15,
+    },
+    {
+      title: "Completed Referrals",
+      value: 42,
+    },
+    {
+      title: "Total Commissions",
+      value: "£1856.50",
+    },
+    {
+      title: "Conversion Rate",
+      value: "68%",
+    }
+  ]
+  }

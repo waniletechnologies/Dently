@@ -14,6 +14,7 @@ import PatientsDonutChart from "./components/patients-donut-chart";
 
 const insightCards = [
   {
+    id: "1",
     title: "Improve Hygiene Upsell Rates",
     bullets: [
       "Patients are often declining fluoride. Consider offering a bundled package or positioning it earlier in conversation.",
@@ -23,6 +24,7 @@ const insightCards = [
     subtext: "Based on last 30 days of call and case acceptance data",
   },
   {
+    id: "2",
     title: "Offer Earlier Appointments",
     bullets: [
       "Patients frequently drop off at scheduling stage when not offered convenient appointment times.",
@@ -32,6 +34,7 @@ const insightCards = [
     subtext: "Based on call analysis from April 3-17",
   },
   {
+    id: "3",
     title: "Use Patient Names More Often",
     bullets: [
       "Call analysis shows low personalization rate compared to successful conversions.",
@@ -80,8 +83,8 @@ export default function PamsInsights() {
           <TabsTrigger value="trends">Performance Trends</TabsTrigger>
         </TabsList>
         <TabsContent value="insights">
-          {insightCards.map((card, i) => (
-            <InsightCard key={i} {...card} />
+          {insightCards.map((card) => (
+            <InsightCard key={card.id} {...card} />
           ))}
         </TabsContent>
         <TabsContent value="trends">
