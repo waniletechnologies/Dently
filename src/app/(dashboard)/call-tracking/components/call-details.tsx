@@ -26,14 +26,14 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-export function CallDetail({ callId }) {
+export function CallDetail({ callId }: { callId: string }) {
 	const callDetail = callTrackingData.callDetails[callId];
 
 	if (!callDetail) {
 		return <div>Call not found</div>;
 	}
 
-	const getStatusBadge = (status, type) => {
+	const getStatusBadge = (status: string, type: string) => {
 		const baseClasses = 'text-xs font-medium';
 
 		switch (type) {
@@ -189,7 +189,7 @@ export function CallDetail({ callId }) {
 								<p className="text-[#848484] mb-4">No comments Yet</p>
 							) : (
 								<div className="space-y-4 mb-4">
-									{callDetail.comments.map((comment) => (
+									{callDetail.comments.map((comment: any) => (
 										<div
 											key={`${comment.author}-${comment.timestamp}`}
 											className="border-l-4 border-[#ffa048] pl-4"
@@ -252,7 +252,7 @@ export function CallDetail({ callId }) {
 									</TableRow>
 								</TableHeader>
 								<TableBody>
-									{callDetail.callsHistory.map((call) => (
+									{callDetail.callsHistory.map((call: any) => (
 										<TableRow
 											key={`${call.dateTime}-${call.number}`}
 											className="border-b border-[#f0f0f0]"
@@ -281,7 +281,7 @@ export function CallDetail({ callId }) {
 														<AvatarFallback className="bg-[#10b981] text-white text-xs">
 															{call.staffMember
 																.split(' ')
-																.map((n) => n[0])
+																.map((n: any) => n[0])
 																.join('')}
 														</AvatarFallback>
 													</Avatar>

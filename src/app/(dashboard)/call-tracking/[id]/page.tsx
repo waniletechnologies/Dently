@@ -2,7 +2,7 @@
 
 import { CallDetail } from '../components/call-details';
 
-export default function CallDetailPage({ params }) {
+export default function CallDetailPage({ params }: { params: { id: string } }) {
 	return (
 		<main className="sm:p-6 p-3 bg-[#f9f8fa] ">
 			<CallDetail callId={params.id} />
