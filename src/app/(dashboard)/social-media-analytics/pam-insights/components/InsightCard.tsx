@@ -61,9 +61,9 @@ export function InsightCard({ insight, showCreativeElements = false }: InsightCa
             <div>
               <h4 className="text-sm font-medium text-gray-900 mb-2">Suggested Hashtags</h4>
               <div className="flex flex-wrap gap-2">
-                {insight.suggestedHashtags.map((hashtag, index) => (
+                {insight.suggestedHashtags.map((hashtag) => (
                   <span
-                    key={index}
+                    key={hashtag}
                     className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
                   >
                     {hashtag}

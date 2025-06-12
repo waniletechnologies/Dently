@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { InsightsData } from "@/lib/db";
@@ -65,7 +65,7 @@ export default function PamsInsights() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" className="w-[200px]">
-            {InsightsData.filterOptions.timeFrames.map((option: { value: Key | null | undefined; label: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }) => (
+            {InsightsData.filterOptions.timeFrames.map((option) => (
               <DropdownMenuItem 
                 key={option.value}
                 onSelect={() => handleDateChange(option.label as string)}
@@ -76,7 +76,7 @@ export default function PamsInsights() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-        <InsightsMetric status={selectedStatus} />
+        <InsightsMetric />
       <Tabs defaultValue="insights" className="mt-8">
         <TabsList className="mb-4 border-2 border-dotted">
           <TabsTrigger className="text-[#2A2828]" value="insights">Pam&apos;s Insights</TabsTrigger>

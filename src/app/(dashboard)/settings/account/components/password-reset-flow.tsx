@@ -16,7 +16,7 @@ export function PasswordResetFlow({ open, onOpenChange }: PasswordResetFlowProps
     console.log('[PasswordResetFlow] currentStep:', currentStep, 'dialog open:', open);
   }, [currentStep, open]);
 
-  const handleEmailSubmit = (email: string) => {
+  const handleEmailSubmit = async (email: string): Promise<void> => {
     setUserEmail(email);
     setCurrentStep('verification');
   };
@@ -54,7 +54,6 @@ export function PasswordResetFlow({ open, onOpenChange }: PasswordResetFlowProps
       {currentStep === 'email' && (
         <ChangePasswordDialog 
           onEmailSubmit={handleEmailSubmit}
-          onClose={handleClose}
         />
       )}
 

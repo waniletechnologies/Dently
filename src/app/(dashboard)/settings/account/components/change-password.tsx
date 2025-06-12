@@ -23,14 +23,18 @@ const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
 });
 
-export function ChangePasswordDialog({ onEmailSubmit, }){
+interface ChangePasswordDialogProps {
+  onEmailSubmit: (email: string) => Promise<void>;
+}
+
+export function ChangePasswordDialog({ onEmailSubmit }: ChangePasswordDialogProps){
 
     const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: { email: "" }
     });
 
-    const handleSubmit = async (data) => {
+    const handleSubmit = async (data: z.infer<typeof formSchema>) => {
         try {
             await onEmailSubmit(data.email);
             form.reset();

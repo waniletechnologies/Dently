@@ -31,7 +31,12 @@ const InsightsPage = () => {
         {insights.map((insight) => (
           <InsightCard
             key={insight.id}
-            insight={insight}
+            insight={{
+              ...insight,
+              metrics: Object.fromEntries(
+                Object.entries(insight.metrics).filter(([_, value]) => value !== undefined)
+              )
+            }}
             showCreativeElements={activeTab === "creative"}
           />
         ))}
