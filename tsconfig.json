@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "ES2017",
+		"target": "ES2022",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": false,
 		"skipLibCheck": true,
@@ -26,9 +26,7 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"next-env.d.ts",
-		".next/types/**/*.ts",
-		"src/app/(dashboard)/financial-data/layout.tsx",
-		"src/app/(dashboard)/page.tsx"
+		".next/types/**/*.ts"
 	],
 	"exclude": ["node_modules"]
 }
