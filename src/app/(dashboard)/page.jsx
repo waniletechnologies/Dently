@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const DashboardPage = () => {
-  return (
-    redirect("/dashboard")
-  )
-}
+	return redirect('/dashboard');
+};
 
-export default DashboardPage
+export default DashboardPage;

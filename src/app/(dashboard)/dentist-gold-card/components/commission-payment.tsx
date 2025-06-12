@@ -1,3 +1,1 @@
-export default function CommissionPayment(){
-    
-}
+export default function CommissionPayment() {}
